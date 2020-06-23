@@ -1,5 +1,5 @@
-# Supermarket Management System
-## 超市管理系统主要功能点
+# Marvel Supermarket Management System
+## 玛尔沃超市管理系统主要功能点
 ### 1、经理模块
 
 * 经理登录
