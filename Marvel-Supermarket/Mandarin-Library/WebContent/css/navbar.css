@@ -1,0 +1,117 @@
+.head{
+    width: 100%;
+    height: 80px;
+    top:0;
+    margin: 0 auto;
+    position: fixed;
+    background: rgba(255,255,255,0.5);
+    z-index: 9999;
+    border-bottom-color: red;
+    border-bottom-style:solid;
+}
+
+.logo{
+    width: 10%;
+    float: left;
+    margin-left: 10%;
+    padding: 10px 0;
+}
+.head-nav ul li:hover {
+    background: #ff9c01;
+}
+.head-nav ul a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    color: black;
+}
+
+
+a {
+    color: black;
+    text-decoration: none;
+    outline: none;
+}
+ol,
+ul,
+li {
+    list-style: none;
+}
+.head-nav {
+    width: 80%;
+    float: left;
+    height: 60px;
+    position: relative;
+}
+.head-nav-con {
+    width: 100%;
+    float: left;
+    height: 60px;
+    position: relative;
+}
+.head-nav-con ul li {
+	float: left;
+    margin: 20px 15px;
+    text-align: center;
+    width: 10%;
+}
+.head-nav-con ul li:hover {
+    background: #ff9c01;
+}
+.head-nav-con ul a {
+    font-size: 22px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    color: black;
+}
+.head-nav-con .drop-down {
+    position: inherit;
+}
+.head-nav-con .drop-down-content {
+    padding: 0;
+    z-index: 999;
+    background: white;
+    position: absolute;
+    width: inherit;
+    display:none;
+}
+.head-nav-con .drop-down-content li{
+	margin:0 0 0 0;
+	width: -webkit-fill-available;
+}
+.head-nav-con .drop-down-content li:hover > a {
+    background-color: #ff9c01;
+}
+.head-nav-con .drop-down:hover .drop-down-content {
+    display: block;
+}
+.head-nav-con .drop-down-2 {
+    position: relative;
+}
+.head-nav-con .drop-down-content-2 {
+    padding: 0;
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #007130;
+    right: -170px;
+    top: 0;
+}
+.head-nav-con .drop-down-content-2 > li {
+    float: none;
+    background-color: #007130;
+}
+.head-nav-con .drop-down-content-2 li:hover a {
+    background-color: #ff9c01;
+}
+.head-nav-con .drop-down-2:hover .drop-down-content-2 {
+    display: block;
+}
+
+.dividingLine{
+    padding-top: 60px;
+    border-bottom: 2px solid #ed1c24;
+}
