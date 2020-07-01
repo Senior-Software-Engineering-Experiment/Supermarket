@@ -12,16 +12,16 @@
 		<div class="check-div form-inline">
 			<div class="col-xs-3">
 				<button class="btn btn-yellow btn-xs" data-toggle="modal"
-					data-target="#addCategory">ADD CATEGORY</button>
+					data-target="#addCategory">添加分类</button>
 			</div>
 
 		</div>
 		<div class="data-div">
 			<div class="row tableHeader">
 
-				<div class="col-xs-5">Category No:</div>
-				<div class="col-xs-5">Category Name:</div>
-				<div class="col-xs-2">Operation:</div>
+				<div class="col-xs-5">分类编号:</div>
+				<div class="col-xs-5">分类名称:</div>
+				<div class="col-xs-2">操作:</div>
 			</div>
 
 
@@ -36,7 +36,7 @@
 			<ul class="pagination">
 				<li><select id="categoryPageSelect" name="categoryPageSelect"
 					onchange="turnToCategory(this.options[this.options.selectedIndex].value)">
-				</select> Page</li>
+				</select> 页</li>
 				<li class="gray" id="totalPageLi" name="totalPageLi"></li>
 				<li><i class="glyphicon glyphicon-menu-left"
 					id="categoryPageDown" name="categoryPageDown" onclick=categoryPageDown()>
@@ -58,14 +58,13 @@
 							aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
-						<h4 class="modal-title" id="gridSystemModalLabel">Add
-							Category</h4>
+						<h4 class="modal-title" id="gridSystemModalLabel">添加分类</h4>
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid">
 							<form class="form-horizontal" name="tijiao" id="tijiao" action="AddCategoryServlet">
 								<div class="form-group ">
-									<label for="cName" class="col-xs-3 control-label">Name：</label>
+									<label for="cName" class="col-xs-3 control-label">名称：</label>
 									<div class="col-xs-8 ">
 										<input type="text" class="form-control input-sm duiqi"
 											id="newCategoryName" name="newCategoryName" placeholder="" 
@@ -76,8 +75,8 @@
 								</form>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-xs btn-white"
-										data-dismiss="modal">Cancel</button>
-									<button type="button" class="btn btn-xs btn-green" onclick="newCategory()" data-dismiss="modal">Save</button>
+										data-dismiss="modal">取消</button>
+									<button type="button" class="btn btn-xs btn-green" onclick="newCategory()" data-dismiss="modal">保存</button>
 								</div>
 							
 						</div>
@@ -100,8 +99,7 @@
 							aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
-						<h4 class="modal-title" id="gridSystemModalLabel">Modify
-							Category</h4>
+						<h4 class="modal-title" id="gridSystemModalLabel">修改分类</h4>
 					</div>
 					<form class="form-horizontal" id="saveCategoryInfoForm"
 						name="saveCategoryInfoForm" action="ChangeCategoryInfoServlet">
@@ -109,7 +107,7 @@
 							<div class="container-fluid">
 
 								<div class="form-group ">
-									<label for="thisName" class="col-xs-3 control-label">Name：</label>
+									<label for="thisName" class="col-xs-3 control-label">名称：</label>
 									<div class="col-xs-8 ">
 										<input type="hidden" id="thisCategoryNo" name="thisCategoryNo"
 											value=""> 
@@ -125,9 +123,9 @@
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-xs btn-white"
-								data-dismiss="modal">Cancel</button>
+								data-dismiss="modal">取消</button>
 							<button type="button" class="btn btn-xs btn-green"
-								onclick="saveCategoryInfo()" data-dismiss="modal">Save</button>
+								onclick="saveCategoryInfo()" data-dismiss="modal">保存</button>
 						</div>
 					</form>
 				</div>
@@ -150,17 +148,16 @@
 								aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
-							<h4 class="modal-title" id="gridSystemModalLabel">Prompt</h4>
+							<h4 class="modal-title" id="gridSystemModalLabel">提示</h4>
 						</div>
 						<div class="modal-body">
-							<div class="container-fluid">Are you sure you want to
-								delete this category?</div>
+							<div class="container-fluid">你确定删除这个分类吗？</div>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-xs btn-white"
-								data-dismiss="modal">Cancel</button>
+								data-dismiss="modal">取消</button>
 							<button type="button" id="deleteCategory" name="deleteCategory"
-								class="btn  btn-xs btn-danger" onclick="deleteThisCategory()" data-dismiss="modal">Delete</button>
+								class="btn  btn-xs btn-danger" onclick="deleteThisCategory()" data-dismiss="modal">删除</button>
 						</div>
 					</div>
 					<!-- /.modal-content -->
@@ -217,7 +214,7 @@
 								if(pageNum == 1){
 									$("#categoryPageSelect").empty();
 									var totalPageNum = objs[0].totalPage;
-									$("#totalPageLi").text('Total ' + totalPageNum + ' Page');
+									$("#totalPageLi").text('共 ' + totalPageNum +'页' );
 									for(var i = 1; i <= objs[0].totalPage; i++){
 										var optionBar = '<option value="'
 										+ i
@@ -242,12 +239,12 @@
 												+ 'data-target="#reviseCategory"'
 												+ 'onclick="turnToThisCategory('
 												+ categoryNo
-												+ ')">Modify</button>'
+												+ ')">更改</button>'
 												+ '<button class="btn btn-danger btn-xs" data-toggle="modal"'
 												+ 'data-target="#deleteCategory"'
 												+ 'onclick="toDeleteThisCategory('
 												+ categoryNo
-												+ ')">Delete</button>'
+												+ ')">删除</button>'
 												+ '</div>'
 												+ '</div>';
 									$("#categoryDisplayDiv").append(div);
