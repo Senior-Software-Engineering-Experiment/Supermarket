@@ -14,7 +14,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>售货员</title>
+<title>Librarian</title>
 <script src="js/library-jquery.min.js"></script>
 <script src="js/library-bootstrap.min.js"></script>
 <script src="js/libraryHead.js"></script>

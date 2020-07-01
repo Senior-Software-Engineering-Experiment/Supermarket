@@ -145,7 +145,7 @@
     <div id="wrap">
 		
 		 <div id="logoDiv">
-                    <p id="logoP"><img id="logo" alt="" src="images/NEWLOGO.png"></p>
+                    <p id="logoP"><img id="logo" alt="" src="images/logo.jpg"></p>
                     <!--此处的图片为logo-->
 				  <input type="image" src="images/标题.png" class="biaoti" />
 				   <p class="pg_dl2" id="welcome">  </p>  
@@ -172,13 +172,13 @@
                   <p class="word" id="userName"></p>
                     <!--实现从数据库读取名字写入-->
               <p>&nbsp;</p>
-		      <div class="meun-title">管理</div>
+		      <div class="meun-title">Management</div>
 		      <p>&nbsp;</p>
-                <div class="meun-item" href="#user" id="clickH" aria-controls="user" role="tab" data-toggle="tab"><img src="images/icon_user_grey.png">管理售货员</div>
+                <div class="meun-item" href="#user" id="clickH" aria-controls="user" role="tab" data-toggle="tab"><img src="images/icon_user_grey.png">Librarian management</div>
                 <p>&nbsp;</p>
-                <div class="meun-item" href="#chan" aria-controls="chan" role="tab" data-toggle="tab"><img src="images/icon_change_grey.png">修改个人密码</div>
+                <div class="meun-item" href="#chan" aria-controls="chan" role="tab" data-toggle="tab"><img src="images/icon_change_grey.png">Change personal password</div>
                 <p>&nbsp;</p>
-                <div class="meun-item" href="#regu" aria-controls="regu" role="tab" data-toggle="tab"><img src="images/icon_rule_grey.png">系统设置</div>
+                <div class="meun-item" href="#regu" aria-controls="regu" role="tab" data-toggle="tab"><img src="images/icon_rule_grey.png">Rule management</div>
             </div>
 			</div>
             <!-- 右侧具体内容栏目 -->
@@ -193,14 +193,14 @@
             <div role="tabpanel" class="tab-pane" id="user">
                 <div class="check-div form-inline">
                     <div class="col-xs-3" style="padding-left:2px">
-                        <button class="btn btn-yellow btn-xs" id="add" data-toggle="modal" data-target="#addUser">添加售货员</button>
+                        <button class="btn btn-yellow btn-xs" id="add" data-toggle="modal" data-target="#addUser">Add librarian</button>
                     </div>
                     <div class="col-xs-41">
                     	<select id="type">
-							<option value="userName">用户名</option>
-							<option value="name">姓名</option>
+							<option value="userName">UserName</option>
+							<option value="name">Name</option>
 						</select> 
-                        <input type="text" class="form-control input-sm" id="searchBlank" placeholder="搜索" style="color: black">
+                        <input type="text" class="form-control input-sm" id="searchBlank" placeholder="Enter to search" style="color: black">
                        <form action="LogoutServlet" name="tuichuForm"></form>
                        
 				        <input type="image" src="images/搜索.png" class="sousuo" style="width:30px!important; float:right; margin-top:-45px!important; margin-left:330px!important" onclick="search()" />
@@ -211,22 +211,22 @@
                 <div class="data-div">
                     <div class="row tableHeader">
                         <div class="col-xs-222 "  >
-                             	用户名
+                           UserName
                         </div>
                         <div class="col-xs-223" >
-                            	姓名
+                            Name
                         </div>
                         <div class="col-xs-224" >
-                            	性别
+                            Sex
                         </div>
                         <div class="col-xs-222">
-                            	电话
+                            Telephone
                         </div>
                         <div class="col-xs-225" >
-                            	邮箱
+                            Email
                         </div>
                         <div class="col-xs-222" >
-                            	操作
+                            Operation
                         </div>
                     </div>
                     
@@ -252,7 +252,7 @@
                <footer class="footer">
                     <ul class="pagination">
                         <li>
-                            <select id="librarianPageSelect"  onchange="turnToPage(this.options[this.options.selectedIndex].value)"></select>页
+                            <select id="librarianPageSelect"  onchange="turnToPage(this.options[this.options.selectedIndex].value)"></select> Page
                         </li>
                     </ul>
                 </footer>
@@ -267,7 +267,7 @@
 										aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
-									<h4 class="modal-title" id="gridSystemModalLabel">添加售货员</h4>
+									<h4 class="modal-title" id="gridSystemModalLabel">Add librarian</h4>
 								</div>
 								<div class="modal-body">
 									<div class="container-fluid">
@@ -275,7 +275,7 @@
 	<form class="form-horizontal"  onsubmit="return checkForm()" >
 	
 				<div class="form-group">
-					<label for="lUserName" class="col-xs-3 control-label">用户名：</label> 
+					<label for="lUserName" class="col-xs-3 control-label">UserName：</label> 
 					  <div class="col-xs-8 ">
 				    	<input class="form-control input-sm duiqi" id="lUserName" name="lUserName" type="text" onblur="checklUserName()" oninput="checklUserName()" placeholder="Please input userName..." value="">
 					    <span class="default" id="unameErr"></span> 
@@ -283,40 +283,40 @@
 				</div>
 				
 				<div class="form-group">
-                    <label for="Name" class="col-xs-3 control-label">姓名：</label>
+                    <label for="Name" class="col-xs-3 control-label">Name：</label>
                       <div class="col-xs-8 "> 
-                        <input class="form-control input-sm duiqi" id="Name" name="lName" type="text" onBlur="checkName()" oninput="checkName()" placeholder="请输入姓名..." value="">
+                        <input class="form-control input-sm duiqi" id="Name" name="lName" type="text" onBlur="checkName()" oninput="checkName()" placeholder="Please enter name..." value="">
                         <span class="default" id="nameErr"></span>
                       </div>
 				</div>
 				
 			    <div class="form-group">
-                    <label for="sLink" class="col-xs-3 control-label">性别：</label>
+                    <label for="sLink" class="col-xs-3 control-label">Sex：</label>
 				    <div class="kong" >
-                        &nbsp; &nbsp; 男
-                        <input  id ="male" type="radio" style="margin-left:5px; margin-top:13px" name="lSex" value="male">    &nbsp; &nbsp; &nbsp; &nbsp;女<input id="female" type="radio" style="margin-left:5px;" name="lSex" value="female">
+                        &nbsp; &nbsp; Male
+                        <input  id ="male" type="radio" style="margin-left:5px; margin-top:13px" name="lSex" value="male">    &nbsp; &nbsp; &nbsp; &nbsp;Female<input id="female" type="radio" style="margin-left:5px;" name="lSex" value="female">
                     </div>
                 </div>
 				
 				<div class="form-group">
-                    <label for="userPhone" class="col-xs-3 control-label">电话：</label> 
+                    <label for="userPhone" class="col-xs-3 control-label">Telephone：</label> 
                        <div class="col-xs-8">
-                        <input class="form-control input-sm duiqi" type="text" id="userPhone" name="lTel" onBlur="checkPhone()" oninput="checkPhone()" placeholder="请输入电话号码..." value="">
+                        <input class="form-control input-sm duiqi" type="text" id="userPhone" name="lTel" onBlur="checkPhone()" oninput="checkPhone()" placeholder="Please enter telephone number..." value="">
                         <span class="default" id="phoneErr"></span> 
 				      </div>
 				</div>
 				
 		    	<div class="form-group">
-                    <label for="userEmail" class="col-xs-3 control-label">邮箱：</label> 
+                    <label for="userEmail" class="col-xs-3 control-label">Email：</label> 
                        <div class="col-xs-8">           
-                        <input class="form-control input-sm duiqi" type="text" id="userEmail" name="lEmail" onBlur="checkEmail()" oninput="checkEmail()" placeholder="请输入邮箱..." value="">
+                        <input class="form-control input-sm duiqi" type="text" id="userEmail" name="lEmail" onBlur="checkEmail()" oninput="checkEmail()" placeholder="Please enter email..." value="">
                         <span class="default" id="emailErr"></span> 
 				      </div>
 				</div>
 				
 				<div  class="modal-footer">
-				    <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">取消</button>				
-					<input type="submit" onclick="addManager()" value="完成"  class="btn btn-xs btn-green">
+				    <button type="button" class="btn btn-xs btn-white" data-dismiss="modal">Cancel</button>				
+					<input type="submit" onclick="addManager()" value="Finish"  class="btn btn-xs btn-green">
 				</div>
 			
 </form>
@@ -335,13 +335,13 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="gridSystemModalLabel">编辑售货员信息</h4>
+                                <h4 class="modal-title" id="gridSystemModalLabel">Edit librarian account</h4>
                             </div>
                             <div class="modal-body">
                                 <div class="container-fluid">
                                     <form class="form-horizontal">                                       
                                         <div class="form-group">
-                                            <label for="sLink" class="col-xs-3 control-label">姓名：</label>
+                                            <label for="sLink" class="col-xs-3 control-label">Name：</label>
                                             <div class="col-xs-8 ">
                                                 <input type="" class="form-control input-sm duiqi" id="sName" placeholder="">
                                             </div>
@@ -366,24 +366,24 @@
                              -->  
                              
           <div class="form-group" >
-          <label for="sLink" class="col-xs-3 control-label">性别：</label>
+          <label for="sLink" class="col-xs-3 control-label">Sex：</label>
            <div class="select">
                 <select  id="sSex" name="lSex" style="margin-top:8px;">           
-                    <option value='male'>男</option>
-                    <option value='female'>女</option>
+                    <option value='male'>male</option>
+                    <option value='female'>female</option>
                 </select>
             </div>
               </div>
         
                                         
                                         <div class="form-group">
-                                            <label for="sOrd" class="col-xs-3 control-label">邮箱：</label>
+                                            <label for="sOrd" class="col-xs-3 control-label">Email：</label>
                                             <div class="col-xs-8">
                                                 <input type="" class="form-control input-sm duiqi" id="sEmial" placeholder="">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="sKnot" class="col-xs-3 control-label">电话：</label>
+                                            <label for="sKnot" class="col-xs-3 control-label">Telephone：</label>
                                             <div class="col-xs-8">
                                                 <input type="" class="form-control input-sm duiqi" id="sTelep" placeholder="">
                                             </div>
@@ -393,8 +393,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button  id="closeEdit" type="button" class="btn btn-xs btn-white" data-dismiss="modal">取消</button>
-                                <button type="button" class="btn btn-xs btn-green " onclick="edit()">保存</button>
+                                <button  id="closeEdit" type="button" class="btn btn-xs btn-white" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-xs btn-green " onclick="edit()">Save</button>
                             </div>
                         </div>
                         <!-- /.modal-content -->
@@ -410,34 +410,34 @@
 						<form class="form-horizontal" >
 
                        <div class="form-group">
-							<label for="sKnot" class="col-xs-4 control-label">旧密码：</label>
+							<label for="sKnot" class="col-xs-4 control-label">Old Password：</label>
                             <div class="col-xs-5">
                                 <input id="oldPassword" type="password"  name="oPass" class="form-control input-sm duiqi" placeholder="" onBlur="checkold()" oninput="checkold()">
-                                <span id="div1" class="tian" style="margin-top: -25px">*必填</span>
+                                <span id="div1" class="tian" style="margin-top: -25px">*must be filled</span>
                             </div>
                         </div>
 						
 						
                            <div class="form-group">
-                            <label for="sKnot" class="col-xs-4 control-label">新密码：</label>
+                            <label for="sKnot" class="col-xs-4 control-label">New Password：</label>
                             <div class="col-xs-5">
                                 <input id="newPassword1" type="password" name="Password"  class="form-control input-sm duiqi"  placeholder="" onBlur="checkpassword()" oninput="checkpassword()">
-								<span id="div2" class="tian" style="margin-top: -25px">*必填</span>
+								<span id="div2" class="tian" style="margin-top: -25px">*must be filled</span>
                             </div>
                         </div>
 						
                         <div class="form-group">
-                            <label for="sKnot" class="col-xs-4 control-label">确认密码：</label>
+                            <label for="sKnot" class="col-xs-4 control-label">Repeat New Password：</label>
                          <div class="col-xs-5">
                                 <input id="newPassword2"  type="password"  name="pass" class="form-control input-sm duiqi"  placeholder="" onBlur="checkrepassword()" oninput="checkrepassword()" >
-								   <span id="div3" class="tian" style="margin-top: -25px">*必填</span>
+								   <span id="div3" class="tian" style="margin-top: -25px">*must be filled</span>
                             </div>					
                         </div>
                         <div class="form-group text-right">
                             <div class="col-xs-offset-4 col-xs-5" style="margin-left: 169px;">
-                                <button type="button" class="btn btn-xs btn-white" onclick="delete1()" style="margin-right:20px !important">取消</button>
+                                <button type="button" class="btn btn-xs btn-white" onclick="delete1()" style="margin-right:20px !important">Cancel</button>
 								
-                               <button type="button" class="btn btn-xs btn-green" onclick="changeP()" >提交</button>
+                               <button type="button" class="btn btn-xs btn-green" onclick="changeP()" >OK</button>
                             </div>
                         </div>
                    </form>
@@ -612,7 +612,7 @@
     			  var securityD=fine.securityDesposit;
     			  var returnP=fine.returnPeriod;
     			  
-    			  wel.append("欢迎, admin ${sessionScope.userName}!");
+    			  wel.append("Welcome, admin ${sessionScope.userName}!");
     			  adminaccount.append("${sessionScope.userName}");
     			  bookFine.val(bookF);
     			  securityDesposit.val(securityD);
@@ -798,7 +798,7 @@
 		}
 		
 		    function test(){
-			    if(checkForm()) alert("已成功注册!!!");
+			    if(checkForm()) alert("Register librarian successfully!!!");
 			  }
 
 	</script>

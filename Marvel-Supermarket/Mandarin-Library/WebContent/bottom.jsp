@@ -18,31 +18,31 @@
 <div class="footer" id="footer">
 	<div class="container">
 		<div class="col-md-4 agileinfo_footer_grid">
-			<h4>简介</h4>
+			<h4>Our Goal</h4>
 			<p>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;玛尔沃超市管理系统面向三类用户：超市经理、售货员以及超市顾客。
-目标在于实现超市商品的智能化、信息化和简单化
-				<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果您觉得我们有做的不好的地方，请向我们反馈，我们一定竭尽全力为您提供更满意的服务！</span>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Not just for the convenience of readers, our goal is for readers to have a better reading experience.
+				<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anything you think we're doing wrong or not enough, please write to us.
+We will strive to do better, look forward to our growth with you!</span>
 			</p>
 		</div>
 		<div class="col-md-4 agileinfo_footer_grid mid-w3l nav2">
-			<h4>服务</h4>
+			<h4>Operation</h4>
 			<ul>
-				<li><a  class="scroll ahome">主页</a></li>
-				<li><a  class="scroll aservices">搜索</a></li>
-				<li><a  class="scroll ateam">团队</a></li>
-				<li><a  class="scroll apost">公告</a></li>
-				<li><a  href="contact.jsp" class="scroll" target="_blank">联系我们</a></li>
+				<li><a  class="scroll ahome">Home</a></li>
+				<li><a  class="scroll aservices">Services</a></li>
+				<li><a  class="scroll ateam">Our Team</a></li>
+				<li><a  class="scroll apost">Post</a></li>
+				<li><a  href="contact.jsp" class="scroll" target="_blank">Contact Us</a></li>
 			</ul>
 		</div>
 		<div class="col-md-4 agileinfo_footer_grid">
-			<h4>地址</h4>
+			<h4>Our Location</h4>
 			<ul>
 				<li><span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-					陕西省西安市长安区西北工业大学（长安校区）</li>
+					Chang 'an Campus, Northwestern Polytechnical University</li>
 				<!--地址-->
 				<li><span class="glyphicon glyphicon-envelope"
-					aria-hidden="true"></span><a href="mailto:info@example.com">Marvel_Supermarket@nwpu.edu.cn</a></li>
+					aria-hidden="true"></span><a href="mailto:info@example.com">Mandarin_Library_B5@nwpu.edu.cn</a></li>
 				<!--邮箱-->
 				<li><span class="glyphicon glyphicon-earphone"
 					aria-hidden="true"></span> (0123) 0111 111 222</li>

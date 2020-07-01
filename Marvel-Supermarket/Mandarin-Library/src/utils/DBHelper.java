@@ -17,7 +17,7 @@ public class DBHelper {
 
 	public String url = "jdbc:postgresql://localhost:5432/Mandarin-Library";
 	public String username = "postgres";
-	public String password = "123456";
+	public String password = "sxy110403";
 	public static DBHelper instance = null;
 
 	// ͨ����̬�����ע�����ݿ���������֤ע��ִֻ��һ��

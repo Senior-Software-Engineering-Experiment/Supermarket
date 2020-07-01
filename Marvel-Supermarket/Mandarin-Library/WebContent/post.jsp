@@ -20,16 +20,16 @@
 <body>
 	<div id="post" class="review">
 		<div id="lun"class="container"style="height:500px;width:100%;background: url(images/se2.jpg);">
-			<h3 class="title-w3">欢迎使用</h3>
+			<h3 class="title-w3">Posts</h3>
 			
 		</div>
 		<div id="postList" class="postList" style="display:none;">
 			<table >
 				<tr>
-					<th class="postTitle">标题</th>
-					<th class="postContent">内容</th>
-					<th class="postTime">时间</th>
-					<th class="postMore">更多</th>
+					<th class="postTitle">PostTitle</th>
+					<th class="postContent">PostContent</th>
+					<th class="postTime">PostTime</th>
+					<th class="postMore">More</th>
 				</tr>
 			</table>
 			<div id="postContent"></div>

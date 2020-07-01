@@ -95,13 +95,13 @@ body{
 
 
   <ul>
-  		<li><img src="images/NEWLOGO.png" style=" opacity: 0.6;margin: 20px auto;"></li>
+  		<li><img src="images/logo.jpg" style=" opacity: 0.6;margin: 20px auto;"></li>
        	<li id="personInfor">
-				<p id="userName">欢迎! <%=request.getSession().getAttribute("userName")%></p>
+				<p id="userName">Welcome! <%=request.getSession().getAttribute("userName")%></p>
 				<!--实现从数据库读取名字写入-->
 				<form action="LogoutServlet" method="get">
 					<p>
-						<input id="submit" type="submit" value="退出登录"
+						<input id="submit" type="submit" value="Logout"
 							class="btn btn-danger btn-xs" style="width: 140px;">
 						<!--实现退出登录-->
 					</p>
@@ -113,48 +113,49 @@ body{
 			<li><a href="#book"
 				aria-controls="book" role="tab" data-toggle="tab"
 					onclick="displayBook('1')">
-				<img src="images/icon_source.png">商品管理
+				<img src="images/icon_source.png">Books
 			</a></li>
 			
 			<li> <a href="#lend"
 				aria-controls="lend" role="tab" data-toggle="tab">
-				<img src="images/icon_source.png">消费记录
+				<img src="images/icon_source.png">Lend
 			</a></li>
 			
-<!-- 			<li><a href="#return" -->
-<!-- 				aria-controls="return" role="tab" data-toggle="tab"> -->
-<!-- 				<img src="images/icon_source.png">Return -->
-<!-- 			</a></li> -->
+			<li><a href="#return"
+				aria-controls="return" role="tab" data-toggle="tab">
+				<img src="images/icon_source.png">Return
+			</a></li>
 			
-<!-- 			<li><a href="#money" aria-controls="money" role="tab" -->
-<!-- 				data-toggle="tab"> -->
-<!-- 				<img src="images/icon_user.png">Money -->
-<!-- 			</a></li> -->
+			<li><a href="#money" aria-controls="money" role="tab"
+				data-toggle="tab">
+				<img src="images/icon_user.png">Money
+			</a></li>
 			
 			<li><a href="#user" aria-controls="user" role="tab"
 				data-toggle="tab" onclick="displayReader('1')">
-				<img src="images/icon_card.png">顾客管理
+				<img src="images/icon_card.png">Readers
 			</a></li>
 			
 			<li><a href="#notice" aria-controls="notice"
 				role="tab" data-toggle="tab" onclick="postsearch()">
-				<img src="images/icon_source.png">公告管理
+				<img src="images/icon_source.png">Announcements
 			</a></li>
 			
 			<li><a href="#category" aria-controls="category"
 				role="tab" data-toggle="tab" onclick="turnToCategory('1')">
-				<img src="images/icon_change.png">类别管理
+				<img src="images/icon_change.png">Category
 			</a></li>
 			
 			<li><a href="#location" aria-controls="location"
 				role="tab" data-toggle="tab" onclick="turnToLocation('1')">
-				<img src="images/icon_house.png">位置管理
+				<img src="images/icon_house.png">Location
 			</a></li>
-	 
+			<!--  
 			<li><a href="#chan" aria-controls="chan" role="tab"
 				data-toggle="tab">
-				<img src="images/icon_rule.png">修改密码
+				<img src="images/icon_rule.png">Change Password
 			</a></li>
+			-->		
     
   </ul>
   

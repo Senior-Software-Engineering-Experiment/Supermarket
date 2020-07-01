@@ -9,7 +9,7 @@ import javax.servlet.ServletContextListener;
 
 import dao.ReserveDAO;
 
-public  class autoDeleteReserve implements ServletContextListener{
+public class autoDeleteReserve implements ServletContextListener{
 	public void contextInitialized(ServletContextEvent event) {
 		Runnable runnable = new Runnable() {
 			
@@ -31,6 +31,5 @@ public  class autoDeleteReserve implements ServletContextListener{
 		// TODO Auto-generated method stub
 		
 	}
-
 	
 }

@@ -142,13 +142,13 @@ function search(){
                  ht = ht + "<div class='colo-lg-3 col-md-3 col-sm-3 col-xs-3' style='height: 50px; overflow:hidden'>" + json[i].category + "</div>";
                  if(json[i].state==1){ 
                 	 ht = ht + "<div class='colo-lg-1 col-md-1 col-sm-1 col-xs-1'><button class='btn btn-danger btn-xs' data-toggle='modal' >Already Reserved</button></div>";
-                 }else {ht = ht + "<div class='colo-lg-1 col-md-1 col-sm-1 col-xs-1'><button class='btn btn-success btn-xs' data-toggle='modal' >充足</button></div>";}
+                 }else {ht = ht + "<div class='colo-lg-1 col-md-1 col-sm-1 col-xs-1'><button class='btn btn-success btn-xs' data-toggle='modal' >Can be lent</button></div>";}
                  ht = ht + "</div>";
              }
              $("#searchresult").html(ht);
          }, 
          error:function(json){        
-             alert("找不到商品信息！");    
+             alert("Cannot find this book！");    
          }
      });  
 }
@@ -166,23 +166,23 @@ $(document).ready(function(){
 			<div class="check-div form-inline">
 				<div class="col-xs-3">
 					<button class="btn btn-yellow btn-xs" data-toggle="modal"
-						data-target="#lendbook">消费记录</button>
+						data-target="#lendbook">Information registration</button>
 				</div>
 				<div class="col-lg-2" style="text-align: right;">
-					<label for="paixu">选择:&nbsp;</label> <select
+					<label for="paixu">Field:&nbsp;</label> <select
 						class=" form-control" name="sort" id="sort">
-						<option value="title" selected="selected">名称</option>
-						<option value="author">品牌</option>
-						<option value="category">类别</option>
-						<option value="ISBN">商品码</option>
+						<option value="title" selected="selected">title</option>
+						<option value="author">author</option>
+						<option value="category">category</option>
+						<option value="ISBN">ISBN</option>
 					</select>
 				</div>
 				<div class="col-xs-4">
 					<input type="text" class="form-control input-sm"
-						placeholder="请输入..." name="searchContent"
+						placeholder="Input Text To Search" name="searchContent"
 						id="lendsearchContent">
 					<button type="button" id="search" onclick="search()"
-						class="btn btn-white btn-xs ">搜索</button>
+						class="btn btn-white btn-xs ">search</button>
 				</div>
 
 
@@ -191,11 +191,11 @@ $(document).ready(function(){
 			<div class="data-div">
 				<div class="row tableHeader">
 					<!--Adjust col-lg-the number here can change the width-->
-					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">商品码</div>
-					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">名称</div>
-					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">品牌</div>
-					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">种类</div>
-					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">库存</div>
+					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">BookNo</div>
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">Title</div>
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">Author</div>
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">Category</div>
+					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">State</div>
 				</div>
 				<div class="tablebody" style="margin: 0;">
 					<div>
@@ -212,7 +212,7 @@ $(document).ready(function(){
 				<ul class="pagination">
 					<li><select id="lendBookPageSelect" name="lendBookPageSelect"
 						onchange="showLend(this.options[this.options.selectedIndex].value)">
-					</select> 页</li>
+					</select> Page</li>
 					<li class="gray" id="lendBookTotalPageLi"
 						name="lendBookTotalPageLi"></li>
 					<li><i class="glyphicon glyphicon-menu-left"
@@ -235,20 +235,21 @@ $(document).ready(function(){
 								aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
-							<h4 class="modal-title" id="gridSystemModalLabel">消费记录</h4>
+							<h4 class="modal-title" id="gridSystemModalLabel">Information
+								registration</h4>
 						</div>
 						<div class="modal-body">
 							<div class="container-fluid">
 								<form class="form-horizontal" action="LendBookServlet">
 									<table>
 										<tr>
-											<td>商品码:</td>
+											<td>bookNo:</td>
 											<td><input type="text" class="mytxt" id="bookno"
 												name="bookno" placeholder=""></td>
 										</tr>
 
 										<tr>
-											<td>顾客ID:</td>
+											<td>readerNo:</td>
 											<td><input type="text" class="mytxt" id="readerno"
 												name="readerno" placeholder=""></td>
 										</tr>
@@ -259,8 +260,8 @@ $(document).ready(function(){
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-xs btn-xs btn-white"
-								data-dismiss="modal">取消</button>
-							<button type="submit" class="btn btn-xs btn-xs btn-green">提交</button>
+								data-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-xs btn-xs btn-green">Submit</button>
 							<!-- After clicking save data to save to the database, to be implemented-->
 						</div>
 						</form>

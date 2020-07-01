@@ -4,22 +4,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>位置管理</title>
+<title>Manage Location</title>
 </head>
 <body>
 	<div role="tabpanel" class="tab-pane" id="location">
 		<div class="check-div form-inline">
 			<div class="col-xs-3">
 				<button class="btn btn-yellow btn-xs" data-toggle="modal"
-					data-target="#addLocation">添加位置</button>
+					data-target="#addLocation">ADD LOCATION</button>
 			</div>
 
 		</div>
 		<div class="row tableHeader">
 
-			<div class="col-xs-5">位置序号:</div>
-			<div class="col-xs-5">名称:</div>
-			<div class="col-xs-2">操作:</div>
+			<div class="col-xs-5">Location No:</div>
+			<div class="col-xs-5">Location Name:</div>
+			<div class="col-xs-2">Operation:</div>
 		</div>
 		<div class="tablebody" name="displayLocationDiv"
 			id="displayLocationDiv"></div>
@@ -53,43 +53,43 @@
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title" id="gridSystemModalLabel">添加位置</h4>
+					<h4 class="modal-title" id="gridSystemModalLabel">Add Location</h4>
 				</div>
 				<div class="modal-body">
 					<div class="container-fluid">
 						<form class="form-horizontal">
 							<div class="form-group ">
-								<label for="Floor" class="col-xs-3 control-label">层：</label>
+								<label for="Floor" class="col-xs-3 control-label">Floor：</label>
 								<div class="col-xs-8 ">
 									<input type="text" class="form-control input-sm duiqi"
-										id="Floor" name="Floor" placeholder="例如：1层" 
+										id="Floor" name="Floor" placeholder="e.g.Floor 1" 
 											oninvalid="setCustomValidity('Please fill in this field!')"
 													oninput="setCustomValidity('')" required>
 								</div>
 							</div>
 							<div class="form-group ">
-								<label for="Shelf" class="col-xs-3 control-label">货架：</label>
+								<label for="Shelf" class="col-xs-3 control-label">Shelf：</label>
 								<div class="col-xs-8 ">
 									<input type="text" class="form-control input-sm duiqi"
-										id="Shelf" name="Shelf" placeholder="例如：1货架" 
+										id="Shelf" name="Shelf" placeholder="e.g.Shelf 1" 
 											oninvalid="setCustomValidity('Please fill in this field!')"
 													oninput="setCustomValidity('')" required>
 								</div>
 							</div>
 							<div class="form-group ">
-								<label for="Area" class="col-xs-3 control-label">区：</label>
+								<label for="Area" class="col-xs-3 control-label">Area：</label>
 								<div class="col-xs-8 ">
 									<input type="text" class="form-control input-sm duiqi"
-										id="Area" name="Area" placeholder="例如：1区" 
+										id="Area" name="Area" placeholder="e.g.Area 1" 
 											oninvalid="setCustomValidity('Please fill in this field!')"
 													oninput="setCustomValidity('')" required>
 								</div>
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-xs btn-white"
-									data-dismiss="modal">取消</button>
+									data-dismiss="modal">Cancel</button>
 								<button type="button" class="btn btn-xs btn-green"
-								onclick="addLocation()" data-dismiss="modal">提交</button>
+								onclick="addLocation()" data-dismiss="modal">Submit</button>
 							</div>
 						</form>
 					</div>
@@ -114,7 +114,7 @@
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title" id="gridSystemModalLabel">修改位置</h4>
+					<h4 class="modal-title" id="gridSystemModalLabel">Modify Location</h4>
 				</div>
 				<form class="form-horizontal" id="saveLocationInfoForm"
 					name="saveLocationInfoForm" action="ChangeLocationInfoServlet">
@@ -122,7 +122,7 @@
 						<div class="container-fluid">
 
 							<div class="form-group ">
-								<label for="thisName" class="col-xs-3 control-label">名称：</label>
+								<label for="thisName" class="col-xs-3 control-label">Name：</label>
 								<div class="col-xs-8 ">
 									<input type="hidden" id="thisLocationNo" name="thisLocationNo"
 										value=""> 
@@ -139,9 +139,9 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-xs btn-white"
-							data-dismiss="modal">取消</button>
+							data-dismiss="modal">Cancel</button>
 						<button type="button" class="btn btn-xs btn-green"
-							onclick="saveLocationInfo()" data-dismiss="modal">提交</button>
+							onclick="saveLocationInfo()" data-dismiss="modal">Submit</button>
 					</div>
 				</form>
 			</div>
@@ -164,16 +164,17 @@
 							aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
-						<h4 class="modal-title" id="gridSystemModalLabel">提示</h4>
+						<h4 class="modal-title" id="gridSystemModalLabel">Prompt</h4>
 					</div>
 					<div class="modal-body">
-						<div class="container-fluid">确定要删除此位置吗?</div>
+						<div class="container-fluid">Are you sure you want to delete
+							this location?</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-xs btn-white"
-							data-dismiss="modal">取消</button>
+							data-dismiss="modal">Cancel</button>
 						<button type="button" id="deleteLocation" name="deleteLocation"
-							class="btn  btn-xs btn-danger" data-dismiss="modal" onclick="deleteThisLocation()">删除</button>
+							class="btn  btn-xs btn-danger" data-dismiss="modal" onclick="deleteThisLocation()">Delete</button>
 					</div>
 				</div>
 				<!-- /.modal-content -->
@@ -350,10 +351,10 @@
 				data : {"Floor" : floor, "Shelf" : shelf, "Area" : area},
 				traditional : true,
 				success : function(data) {
-					alert("添加位置成功!");
+					alert("add location successfully!");
 				},
 				error : function() {
-					alert("连接失败!");
+					alert("connect failed!");
 				}
 			});
 			turnToLocation(1);

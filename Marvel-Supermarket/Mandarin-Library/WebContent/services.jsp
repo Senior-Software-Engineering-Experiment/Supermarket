@@ -14,7 +14,7 @@
 	<div class="services" id="services"
 		style="background: url(images/te1.jpg) repeat 0px 0px; margin: 80px 0;">
 		<div class="search" style="margin: 0 auto;">
-			<h3>搜索商品</h3>
+			<h3>Find Books</h3>
 			<form id="search"></form>
 		</div>
 		<!--横线-->
@@ -31,7 +31,7 @@
 				<ul class="pagecontent">
 					<li><select id="bookPageSelect" name="bookPageSelect"
 						onchange="turnToBookOne(this.options[this.options.selectedIndex].value)">
-					</select> 页</li>
+					</select> Page</li>
 					<li class="pagegray" id="totalPageLi"></li>
 					<li><i class="pageglyphicon glyphicon-menu-left"
 						id="bookPageUp" onclick=bookPageDown()> </i></li>
@@ -97,18 +97,18 @@
 						
 						$("#search").empty();
 						var div='<select class="bookType" id="type1" name="type1"style="margin-bottom: 10px;">'
-							+ '<option value="">商品类别</option>';
+							+ '<option value="">Book Category</option>';
 						for(var i in objs.categorys){
 							div = div + '<option value="' + objs.categorys[i].categoryName + '">'+objs.categorys[i].categoryName+'</option>';	
 						}
 						
 						div = div + '</select> <select class="bookType" id="type2" name="type2"style="margin-bottom: 10px;">'
-							+ '<option value="title">名称</option>'
-							+ '<option value="author">品牌</option>'
+							+ '<option value="title">Title</option>'
+							+ '<option value="author">Author</option>'
 							+ '</select> '
 							+ '<input type="search" id="searchContent" name="searchContent"value=""> '
 							+ '<input type="hidden" id="pageNum" name="pageNum" value="1"> '
-							+ '<button type="button" id="submit" value="search"style="width: 20%;height: 30px;margin: 10px 0 10px 0;border-radius: 10px;border-color: #6a67ce;" onclick="turnToSearchBook()">搜索</button>';
+							+ '<button type="button" id="submit" value="search"style="width: 20%;height: 30px;margin: 10px 0 10px 0;border-radius: 10px;border-color: #6a67ce;" onclick="turnToSearchBook()">Search</button>';
 						$("#search").append(div);
 					},
 					error : function() {
@@ -175,12 +175,12 @@
 									+ '<div class="col-lg-5" style="margin-left: 20px;">'+ bookNo 
 									+ '</div><div class="col-lg-5">' + bookLocation
 									+ '</div>';
-							//if(isReserve){
-			            	//	div = div + '<button class="btn btn-danger btn-xs" data-toggle="modal" style="width:70px;">Reserved<tton>';
-			            	//}else{
-			            	//	div = div + '<button class="btn-primary" data-toggle="modal" style="color: white;padding: 1px 5px;font-size: 12px;line-height: 1.5;border-radius: 3px;"'
-							//			+ 'data-target="#reserve" onclick="sc('+bookNo+')">Reserve<tton>';
-			            	//}
+							if(isReserve){
+			            		div = div + '<button class="btn btn-danger btn-xs" data-toggle="modal" style="width:70px;">Reserved<tton>';
+			            	}else{
+			            		div = div + '<button class="btn-primary" data-toggle="modal" style="color: white;padding: 1px 5px;font-size: 12px;line-height: 1.5;border-radius: 3px;"'
+										+ 'data-target="#reserve" onclick="sc('+bookNo+')">Reserve<tton>';
+			            	}
 							$(id).append(div);
 						}
 						
@@ -209,7 +209,7 @@
 						var total = objs.length;
 						if(total==0){
 							$("#searchBookContent").empty();
-							var noone= '<h1 style=" text-align: center;">很抱歉，没有您要查询的商品信息！</h1>';
+							var noone= '<h1 style=" text-align: center;">We are so sorry.There is no such book that you finding!</h1>';
 							$("#searchBookContent").append(noone);
 						}
 						if(objs[0].totalPage>1){
@@ -248,13 +248,13 @@
 										+ '<div class="content-sub1">'
 										+ '<h3>'
 			                            + '<a  data-toggle="modal">' + bookTitle + '</a> </h3>'
-			                            + '<h6 style="margin-left: 20px;">品牌:<span>' + bookAuthor + '</span></h6>'
-			                            + '<h6 style="margin-left: 20px;">类别:<span>' + bookCategory + '</span> </h6>'
-			                            + '<h6 style="margin-left: 20px;">商品码:<span>' + bookISBN + '</span> </h6>'
-			                            + '<h6 style="margin-left: 20px;">生产商:<span>' + bookPublish + '</span> </h6>'
-			                            + '<h6 style="margin-left: 20px;">生产日期:<span>' + bookTime + '</span> </h6>'
-			                            + '<h6 style="margin-left: 20px;overflow: hidden;">说明:<span>' + bookBrief + '</span> </h6>'
-			                            + '<button class="btn btn-danger btn-xs" data-toggle="modal" style="margin-left: 20px;width:70px;margin-bottom: 10px;" onclick="turnToThisBook(book'+num+','+bookISBN+')"><span>更多信息↓</span></button>'
+			                            + '<h6 style="margin-left: 20px;">Author:<span>' + bookAuthor + '</span></h6>'
+			                            + '<h6 style="margin-left: 20px;">Category:<span>' + bookCategory + '</span> </h6>'
+			                            + '<h6 style="margin-left: 20px;">ISBN:<span>' + bookISBN + '</span> </h6>'
+			                            + '<h6 style="margin-left: 20px;">Publisher:<span>' + bookPublish + '</span> </h6>'
+			                            + '<h6 style="margin-left: 20px;">Publish Time:<span>' + bookTime + '</span> </h6>'
+			                            + '<h6 style="margin-left: 20px;overflow: hidden;">Describe:<span>' + bookBrief + '</span> </h6>'
+			                            + '<button class="btn btn-danger btn-xs" data-toggle="modal" style="margin-left: 20px;width:70px;margin-bottom: 10px;" onclick="turnToThisBook(book'+num+','+bookISBN+')"><span>MORE↓</span></button>'
 			                            + '</div>'+ '<div id="book'+num+'"style="width: 100%;float: left;border-top: solid;display:none;"></div>';
 							$("#searchBookContent").append(div);
 							

@@ -14,7 +14,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>售货员</title>
+<title>Librarian</title>
 <script src="js/library-jquery.min.js"></script>
 <script src="js/library-bootstrap.min.js"></script>
 <script src="js/libraryHead.js"></script>
@@ -41,15 +41,15 @@
 	
 	<div role="tabpanel" class="tab-pane" id="record">
 					<div class="check-div form-inline">
-					<a href="library.jsp"><span class="glyphicon glyphicon glyphicon-chevron-left"></span>返回</a>
+					<a href="library.jsp"><span class="glyphicon glyphicon glyphicon-chevron-left"></span>back</a>
 						<span  aria-controls="user" role="tab"
-							data-toggle="tab" style="cursor: pointer;">返回</span>
+							data-toggle="tab" style="cursor: pointer;">Back</span>
 					</div>
 					<div class="data-div">
 						<div class="row tableHeader">
-							<div class="col-xs-2 ">商品号</div>
-							<div class="col-xs-2">名称</div>
-							<div class="col-xs-2">品牌</div>
+							<div class="col-xs-2 ">Book No</div>
+							<div class="col-xs-2">Title</div>
+							<div class="col-xs-2">Author</div>
 							<div class="col-xs-2">Data</div>
 							<div class="col-xs-1">Fine</div>
 							<div class="col-xs-1">Returned</div>

@@ -47,7 +47,7 @@
 
 <meta charset="utf-8">
 <link rel="icon" type="image/png" href="images/图标.png" />
-<title>售货员|个人信息</title>
+<title>Library|Personal Information</title>
 
 <!-- Bootstrap core CSS -->
 <link href="css/person.bootstrap.min.css" rel="stylesheet">
@@ -81,7 +81,7 @@
 		<section class="resume-section p-3 p-lg-5 d-flex align-items-center"
 			id="ing">
 			<div class="w-100">
-				<h2 class="mb-5">查看消费记录</h2>
+				<h2 class="mb-5">Books on Load</h2>
 				<div class="finishTaskList">
 					<!--借阅中的书籍-->
 					<table class="pendingTask" id="booking">
@@ -154,19 +154,21 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav">
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="#about">个人信息</a></li>
+						href="#about">Person Information</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						data-toggle="modal" data-target="#changeimformation">修改个人信息</a></li>
+						data-toggle="modal" data-target="#changeimformation">Change
+							Information</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						data-toggle="modal" data-target="#changepassword">修改密码</a></li>
+						data-toggle="modal" data-target="#changepassword">Change
+							Password</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="#ing">消费记录</a></li>
+						href="#ing">Books on load</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="#compelet">Books Returned</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="#awards">Fine</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="index.jsp">主页</a></li>
+						href="index.jsp">Home Page</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -203,7 +205,8 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="gridSystemModalLabel">编辑个人信息</h4>
+					<h4 class="modal-title" id="gridSystemModalLabel">Edit
+						Information</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -213,7 +216,7 @@
 					<div class="container-fluid">
 						<form class="form-horizontal">
 							<div class="form-group ">
-								<label for="sName" class="col-xs-3 control-label">姓名：</label>
+								<label for="sName" class="col-xs-3 control-label">Name：</label>
 								<div class="col-xs-8 ">
 									<input type="text" class="form-control input-sm duiqi"
 										placeholder="" id="name" name="name"
@@ -223,14 +226,14 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="sLink" class="col-xs-3 control-label">电话：</label>
+								<label for="sLink" class="col-xs-3 control-label">Phone：</label>
 								<div class="col-xs-8 ">
 									${reader.readerNo}
 									<!--使用EL语言实现输入框有默认值-->
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="sLink" class="col-xs-3 control-label">邮箱：</label>
+								<label for="sLink" class="col-xs-3 control-label">Email：</label>
 								<div class="col-xs-8 ">
 									<input type="email" class="form-control input-sm duiqi"
 										placeholder="" id="email" name="email" value="${reader.email}"
@@ -244,10 +247,10 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-xs btn-white"
-						data-dismiss="modal" style="background: red; color: white;">取消</button>
+						data-dismiss="modal" style="background: red; color: white;">Cancel</button>
 					<button type="button" class="btn btn-xs btn-green"
 						onclick="pass(document.getElementById('email').value)"
-						data-dismiss="modal" style="background: green; color: white;">提交</button>
+						data-dismiss="modal" style="background: green; color: white;">Submit</button>
 					<!-- 点击保存后数据要保存到数据库中，待实现，与添加数据一样-->
 				</div>
 			</div>
@@ -263,7 +266,8 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="gridSystemModalLabel">修改密码</h4>
+					<h4 class="modal-title" id="gridSystemModalLabel">Edit
+						Password</h4>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -273,7 +277,8 @@
 					<div class="container-fluid">
 						<form class="form-horizontal">
 							<div class="form-group ">
-								<label for="sName" class="col-xs-3 control-label">旧密码：</label>
+								<label for="sName" class="col-xs-3 control-label">Old
+									Password：</label>
 								<div class="col-xs-8 ">
 									<input type="password" class="form-control input-sm duiqi"
 										placeholder="" id="oldpassword" name="oldpassword"
@@ -282,7 +287,8 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="sLink" class="col-xs-3 control-label">新密码：</label>
+								<label for="sLink" class="col-xs-3 control-label">New
+									Password：</label>
 								<div class="col-xs-8 ">
 									<input type="password" class="form-control input-sm duiqi"
 										id="newpassword1" placeholder="" value="" name="newpassword1"
@@ -292,7 +298,8 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="sLink" class="col-xs-3 control-label">确认新密码：</label>
+								<label for="sLink" class="col-xs-3 control-label">Repeat
+									Password：</label>
 								<div class="col-xs-8 ">
 									<input type="password" class="form-control input-sm duiqi"
 										placeholder="" id="newpassword2" name="newpassword2" value=""
@@ -306,10 +313,10 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-xs btn-white"
-						data-dismiss="modal" style="background: red; color: white;">取消</button>
+						data-dismiss="modal" style="background: red; color: white;">Cancel</button>
 					<button type="button" class="btn btn-xs btn-green"
 						onclick="password()" data-dismiss="modal"
-						style="background: green; color: white;">提交</button>
+						style="background: green; color: white;">Submit</button>
 					<!-- 点击保存后数据要保存到数据库中，待实现，与添加数据一样-->
 				</div>
 			</div>
@@ -362,7 +369,7 @@
         	         },
         	        
         		 });
-        		 alert("修改成功!");
+        		 alert("change success!");
         		 location.reload();
             }
 }

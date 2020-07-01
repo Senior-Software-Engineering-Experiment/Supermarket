@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>公告管理</title>
+<title>Notice Manage</title>
 </head>
 <body>
 
@@ -51,14 +51,14 @@ function postsearch(){
                  ht = ht + "<div class='col-lg-2 col-md-2 col-sm-2 col-xs-2' style='height: 50px; overflow:hidden'>" + json[i].posttime + "</div>";
                  ht = ht + "<div class='col-lg-2 col-md-2 col-sm-2 col-xs-2' style='height: 50px; overflow:hidden'>" + json[i].content + "</div>";
                  ht = ht + "<div class='col-lg-2 col-md-2 col-sm-2 col-xs-2' style='height: 50px; overflow:hidden'>" + json[i].librarianno + "</div>";
-                 ht = ht + "<div class='col-lg-2 col-md-2 col-sm-2 col-xs-2'><button class='btn btn-success btn-xs' data-toggle='modal' data-target='#changeNotice' onclick='toEditPost( "+json[i].postno+" ) '>Edit</button><button onclick='toDeletePost( "+ json[i].postno+ " )' class='btn btn-danger btn-xs' data-toggle='modal' data-target='#deleteNotice'>删除</button></div>";
+                 ht = ht + "<div class='col-lg-2 col-md-2 col-sm-2 col-xs-2'><button class='btn btn-success btn-xs' data-toggle='modal' data-target='#changeNotice' onclick='toEditPost( "+json[i].postno+" ) '>Edit</button><button onclick='toDeletePost( "+ json[i].postno+ " )' class='btn btn-danger btn-xs' data-toggle='modal' data-target='#deleteNotice'>Delete</button></div>";
                  ht = ht + "</div>";
              }
              $("#postbody").html(ht);
              
          }, 
          error:function(json){        
-             alert("错误!");    //弹出返回过来的List对象  
+             alert("error!");    //弹出返回过来的List对象  
                  //弹出返回过来的List对象
          }
      });  
@@ -70,33 +70,33 @@ function postsearch(){
 					<div class="check-div form-inline">
 						<div class="col-xs-3">
 							<button class="btn btn-yellow btn-xs" data-toggle="modal"
-								data-target="#addNotice">发布公告</button>
+								data-target="#addNotice">Post Announcement</button>
 						</div>
 						<div class="col-xs-4">
 							<!--此处搜索没有可删除-->
 							<input type="text" class="form-control input-sm"
-								placeholder="请输入..." id="postcontent">
-							<button class="btn btn-white btn-xs " onclick="postsearch()">搜索</button>
+								placeholder="Search" id="postcontent">
+							<button class="btn btn-white btn-xs " onclick="postsearch()">Search</button>
 						</div>
 						<div class="col-lg-3 col-lg-offset-2 col-xs-4"
 							style="padding-right: 40px; text-align: right;">
-							<label for="paixu">排序:&nbsp;</label> <select
+							<label for="paixu">Sort:&nbsp;</label> <select
 								class=" form-control" name="sort" id="postsort">
-								<option>公告序号</option>
-								<option>发布时间</option>
-								<option>最近发布</option>
+								<option>PostNo</option>
+								<option>Post Time First</option>
+								<option>Recently Post First</option>
 							</select>
 						</div>
 					</div>
 					<div class="data-div">
 						<div class="row tableHeader">
 							<!--调整col-lg- 这里的数字可以实现宽度的变化-->
-							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">序号</div>
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">发布人</div>
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">标题</div>
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">时间</div>
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">内容</div>
-							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">售货员</div>
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">No</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">PosterNo</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Title</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Time</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Content</div>
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">Librarian</div>
 						</div>
 						<div class="tablebody" id="postbody">
 							<div class="row">
@@ -104,13 +104,13 @@ function postsearch(){
 								<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">1</div>
 								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Post 1</div>
 								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-									2020-6-30</div>
-								<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">内容</div>
+									2019-9-14</div>
+								<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">Content</div>
 								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
 									<button class="btn btn-success btn-xs" data-toggle="modal"
-										data-target="#changeNotice">编辑</button>
+										data-target="#changeNotice">Edit</button>
 									<button class="btn btn-danger btn-xs" data-toggle="modal"
-										data-target="#deleteNotice">删除</button>
+										data-target="#deleteNotice">Delete</button>
 								</div>
 							</div>
 						</div>
@@ -126,20 +126,20 @@ function postsearch(){
 										aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
-									<h4 class="modal-title" id="gridSystemModalLabel">发布公告</h4>
+									<h4 class="modal-title" id="gridSystemModalLabel">Post Announcement</h4>
 								</div>
 								<div class="modal-body">
 									<div class="container-fluid">
 										<form class="form-horizontal">
 											<div class="form-group ">
-												<label for="sName" class="col-xs-3 control-label">姓名：</label>
+												<label for="sName" class="col-xs-3 control-label">Name：</label>
 												<div class="col-xs-8 ">
 													<input type="email" class="form-control input-sm duiqi"
 														id="nName" placeholder="">
 												</div>
 											</div>
 											<div class="form-group">
-												<label for="sLink" class="col-xs-3 control-label">内容：</label>
+												<label for="sLink" class="col-xs-3 control-label">Content：</label>
 												<div class="col-xs-4 ">
 													<textarea class="form-control input-sm duiqi"
 														name="nContent" id="nContent" clos=",50" rows="5"
@@ -151,8 +151,8 @@ function postsearch(){
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-xs btn-xs btn-white"
-										data-dismiss="modal">取消</button>
-									<button type="button" class="btn btn-xs btn-xs btn-green" data-dismiss="modal" data-target='#notice' onclick="addNotice()">保存</button>
+										data-dismiss="modal">Cancel</button>
+									<button type="button" class="btn btn-xs btn-xs btn-green" data-dismiss="modal" data-target='#notice' onclick="addNotice()">Save</button>
 									<!-- 点击保存后数据要保存到数据库中，待实现-->
 								</div>
 							</div>
@@ -173,13 +173,13 @@ function postsearch(){
 										aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
-									<h4 class="modal-title" id="gridSystemModalLabel">编辑公告</h4>
+									<h4 class="modal-title" id="gridSystemModalLabel">Edit Announcenment</h4>
 								</div>
 								<div class="modal-body">
 									<div class="container-fluid">
 										<form class="form-horizontal">
 											<div class="form-group ">
-												<label for="sName" class="col-xs-3 control-label">姓名：</label>
+												<label for="sName" class="col-xs-3 control-label">Name：</label>
 												<div class="col-xs-8 ">
 													<input type="email" class="form-control input-sm duiqi"
 														id="eName" placeholder="" ></input>
@@ -189,7 +189,7 @@ function postsearch(){
 								value="">
 											</div>
 											<div class="form-group">
-												<label for="sLink" class="col-xs-3 control-label">内容：</label>
+												<label for="sLink" class="col-xs-3 control-label">Content：</label>
 												<div class="col-xs-4 ">
 													<textarea class="form-control input-sm duiqi"
 														name="eContent" id="eContent" clos=",50" rows="5"
@@ -201,8 +201,8 @@ function postsearch(){
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-xs btn-white"
-										data-dismiss="modal">取消</button>
-									<button type="button" class="btn btn-xs btn-green" data-dismiss="modal" data-target='#notice' onclick="editNotice()">保存</button>
+										data-dismiss="modal">Cancel</button>
+									<button type="button" class="btn btn-xs btn-green" data-dismiss="modal" data-target='#notice' onclick="editNotice()">Save</button>
 									<!-- 点击保存后数据要保存到数据库中，待实现，与添加数据一样-->
 								</div>
 							</div>

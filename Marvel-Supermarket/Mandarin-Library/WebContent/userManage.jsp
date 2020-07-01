@@ -12,25 +12,25 @@
 		<div class="check-div form-inline">
 			<div class="col-xs-3" id="readerUpperButton" name="readerUpperButton">
 				<button class="btn btn-yellow btn-xs" data-toggle="modal"
-					data-target="#addUser">添加用户</button>
+					data-target="#addUser">Add Reader</button>
 			</div>
 			<div class="col-xs-4">
 				<input type="text" class="form-control input-sm"
-					placeholder="输入文字查找" name="searchReaderContent"
+					placeholder="Input Text to Search" name="searchReaderContent"
 					id="searchReaderContent">
 				<button type="button" class="btn btn-white btn-xs "
-					onclick="searchReader()">查找</button>
+					onclick="searchReader()">Search</button>
 			</div>
 		</div>
 		<div class="data-div">
 			<div class="row tableHeader" name="readerDisplayLabelForm"
 				id="readerDisplayLabelForm">
-				<div class="col-xs-2 ">账号</div>
-				<div class="col-xs-2 ">姓名</div>
-				<div class="col-xs-2">密码</div>
-				<div class="col-xs-2">邮箱</div>
-				<div class="col-xs-2">消费总金额</div>
-				<div class="col-xs-2" style="padding-left: 500px">操作</div>
+				<div class="col-xs-2 ">Account</div>
+				<div class="col-xs-2 ">Name</div>
+				<div class="col-xs-2">Password</div>
+				<div class="col-xs-2">Email</div>
+				<div class="col-xs-2">Fine</div>
+				<div class="col-xs-2" style="padding-left: 500px">Operation</div>
 			</div>
 
 			<div class="tablebody" name="displayReaderDiv" id="displayReaderDiv">
@@ -42,7 +42,7 @@
 			<ul class="pagination">
 				<li><select id="readerPageSelect" name="readerPageSelect"
 					onchange="displayReader(this.options[this.options.selectedIndex].value)">
-				</select> 页面</li>
+				</select> Page</li>
 				<li class="gray" id="readerTotalPageLi" name="readerTotalPageLi"></li>
 				<li><i class="glyphicon glyphicon-menu-left"
 					id="readerPageDown" name="readerPageDown" onclick=readerPageDown()>
@@ -64,13 +64,13 @@
 								aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
-							<h4 class="modal-title" id="gridSystemModalLabel">添加顾客</h4>
+							<h4 class="modal-title" id="gridSystemModalLabel">Add Reader</h4>
 						</div>
 						<div class="modal-body">
 							<div class="container-fluid">
 
 								<div class="form-group ">
-									<label for="sName" class="col-xs-3 control-label">账户：</label>
+									<label for="sName" class="col-xs-3 control-label">Account：</label>
 									<div class="col-xs-8 ">
 										<input type="text" class="form-control input-sm duiqi"
 											name="newReaderAcc" id="newReaderAcc" placeholder="">
@@ -78,7 +78,7 @@
 								</div>
 
 								<div class="form-group ">
-									<label for="sName" class="col-xs-3 control-label">姓名：</label>
+									<label for="sName" class="col-xs-3 control-label">Name：</label>
 									<div class="col-xs-8 ">
 										<input type="text" class="form-control input-sm duiqi"
 											name="newReaderName" id="newReaderName" placeholder="">
@@ -86,7 +86,7 @@
 								</div>
 
 								<div class="form-group ">
-									<label for="sName" class="col-xs-3 control-label">密码：</label>
+									<label for="sName" class="col-xs-3 control-label">Password：</label>
 									<div class="col-xs-8 ">
 										<input type="password" class="form-control input-sm duiqi"
 											name="newReaderPassword" id="newReaderPassword"
@@ -94,7 +94,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="sOrd" class="col-xs-3 control-label">邮箱：</label>
+									<label for="sOrd" class="col-xs-3 control-label">Email：</label>
 									<div class="col-xs-8">
 										<input type="email" class="form-control input-sm duiqi"
 											name="newReaderEmail" id="newReaderEmail" placeholder="">
@@ -105,9 +105,9 @@
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-xs btn-white"
-								data-dismiss="modal">取消</button>
+								data-dismiss="modal">Cancel</button>
 							<button type="submit" class="btn btn-xs btn-green"
-								onclick="saveNewReader()" data-dismiss="modal">保存</button>
+								onclick="saveNewReader()" data-dismiss="modal">Save</button>
 						</div>
 					</form>
 				</div>
@@ -130,13 +130,14 @@
 								aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
-							<h4 class="modal-title" id="gridSystemModalLabel">编辑顾客</h4>
+							<h4 class="modal-title" id="gridSystemModalLabel">Edit
+								Reader</h4>
 						</div>
 						<div class="modal-body">
 							<div class="container-fluid">
 
 								<div class="form-group ">
-									<label for="sName" class="col-xs-3 control-label">账户:</label>
+									<label for="sName" class="col-xs-3 control-label">Account:</label>
 									<div class="col-xs-8 ">
 										<input type="hidden" name="lastReaderAcc" id="lastReaderAcc"
 											value=""> <input type="text"
@@ -146,7 +147,7 @@
 								</div>
 
 								<div class="form-group ">
-									<label for="sName" class="col-xs-3 control-label">姓名:</label>
+									<label for="sName" class="col-xs-3 control-label">Name:</label>
 									<div class="col-xs-8 ">
 										<input type="text" class="form-control input-sm duiqi"
 											id="thisReaderName" name="thisReaderName" placeholder="">
@@ -154,14 +155,14 @@
 								</div>
 
 								<div class="form-group">
-									<label for="sOrd" class="col-xs-3 control-label">密码:</label>
+									<label for="sOrd" class="col-xs-3 control-label">Password:</label>
 									<div class="col-xs-8">
 										<input type="password" class="form-control input-sm duiqi"
 											id="thisReaderPass" name="thisReaderPass" placeholder="">
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="sKnot" class="col-xs-3 control-label">邮箱:</label>
+									<label for="sKnot" class="col-xs-3 control-label">Email:</label>
 									<div class="col-xs-8">
 										<input type="email" class="form-control input-sm duiqi"
 											id="thisReaderEmail" name="thisReaderEmail" placeholder="">
@@ -171,10 +172,10 @@
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-xs btn-white"
-								data-dismiss="modal">取消</button>
+								data-dismiss="modal">Cancel</button>
 							<button type="button" id="lastRNo" name="lastRNo"
 								class="btn btn-xs btn-green" data-dismiss="modal"
-								onclick="saveThisReader()">保存</button>
+								onclick="saveThisReader()">Save</button>
 						</div>
 					</div>
 					<!-- /.modal-content -->
@@ -195,16 +196,18 @@
 								aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
-							<h4 class="modal-title" id="gridSystemModalLabel">提醒</h4>
+							<h4 class="modal-title" id="gridSystemModalLabel">Mention</h4>
 						</div>
 						<div class="modal-body">
-							<div class="container-fluid">你确定删除顾客吗？</div>
+							<div class="container-fluid">Are you sure to delete the
+								reader? Before you delete this user, please check if this user 
+									has book(s) still not return.</div>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-xs btn-white"
-								data-dismiss="modal">取消</button>
+								data-dismiss="modal">Cancel</button>
 							<button type="button" class="btn  btn-xs btn-danger"
-								onclick="deleteReader()" data-dismiss="modal">删除</button>
+								onclick="deleteReader()" data-dismiss="modal">Delete</button>
 						</div>
 					</div>
 					<!-- /.modal-content -->
@@ -368,19 +371,19 @@
 					$("#readerDisplayLabelForm").empty();
 					$("#readerUpperButton").empty();
 					var div3 = '<button class="btn btn-yellow btn-xs" data-toggle="modal" '
-							+ 'data-target="#addUser">添加顾客</button>';
+							+ 'data-target="#addUser">Add Reader</button>';
 					$("#readerUpperButton").append(div3);
-   					var div2 = '<div class="col-xs-2 ">账户</div>'
-   							+ '<div class="col-xs-2">姓名</div>'
-   							+ '<div class="col-xs-2">密码</div>'
-   							+ '<div class="col-xs-2">邮箱</div>'
-   							+ '<div class="col-xs-2" style="padding-left:100px">金额</div>'
-   							+ '<div class="col-xs-2" style="padding-left:200px">操作</div>';
+   					var div2 = '<div class="col-xs-2 ">Account</div>'
+   							+ '<div class="col-xs-2">Name</div>'
+   							+ '<div class="col-xs-2">Password</div>'
+   							+ '<div class="col-xs-2">Email</div>'
+   							+ '<div class="col-xs-2" style="padding-left:100px">Total Fine</div>'
+   							+ '<div class="col-xs-2" style="padding-left:312px">Operation</div>';
    					$("#readerDisplayLabelForm").append(div2);
    						if(pageNum == 1){
 							$("#readerPageSelect").empty();
 							var totalPageNum = objs[0].totalPage;
-							$("#readerTotalPageLi").text('第 ' + totalPageNum + ' 页');
+							$("#readerTotalPageLi").text('Total ' + totalPageNum + ' Page');
 							for(var i = 1; i <= objs[0].totalPage; i++){
 								var optionBar = '<option value="'
 								+ i
@@ -412,18 +415,18 @@
 									+ '<div class="col-xs-2" style="padding-left:119px">'
 									+ readerFine
 									+ '</div>'
-									+ '<div class="col-xs-4" style="padding-left:150px">'
+									+ '<div class="col-xs-4" style="padding-left:266px">'
 									+ '<button class="btn btn-success btn-xs" data-toggle="modal"'
 									+ 'data-target="#reviseUser" onclick="toModifyThisReader('
 									+ readerNo
-									+ ')">编辑</button>'
+									+ ')">Edit</button>'
 									+ '<button class="btn btn-danger btn-xs" data-toggle="modal"'
 									+ 'data-target="#deleteUser" onclick="toDeleteThisReader('
 									+ readerNo
-									+ ')">删除</button>'
+									+ ')">Delete</button>'
 									+ '<button class="btn btn-xs" data-toggle="modal" onclick="displayBorrow('
 									+ readerNo
-									+')" style="color: #f5f5f5; background-color: #f1c40f;">恢复</button>'
+									+')" style="color: #f5f5f5; background-color: #f1c40f;">Record</button>'
 									+ '</div>'
 									+ '</div>';
 							$("#displayReaderDiv").append(div);
@@ -475,16 +478,16 @@
 							+ '<button class="btn btn-success btn-xs" data-toggle="modal"'
 							+ 'data-target="#reviseUser" onclick="xg('
 							+ readerNo
-							+ ')">编辑</button>'
+							+ ')">Edit</button>'
 							+ '<button class="btn btn-danger btn-xs" data-toggle="modal"'
 							+ 'data-target="#deleteUser" onclick="sc('
 							+ readerNo
-							+ ')">删除</button>'
+							+ ')">Delete</button>'
 							+ '<a class="linkCcc"  aria-controls="char"'
 							+ 'role="tab" data-toggle="tab"><button'
 							+ 'class="btn btn-danger btn-xs" data-toggle="modal" onclick="displayBorrow('
 							+ readerNo
-							+')" >恢复</button></a>'
+							+')" >Record</button></a>'
 							+ '</div>';
 						$("#disReaderDiv").append(div);
 					 }

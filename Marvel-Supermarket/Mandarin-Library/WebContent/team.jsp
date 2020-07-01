@@ -77,7 +77,7 @@
 	<div class="team" id="team">
 		<div class="container">
 			<h3 class="title">
-				 <span>团队信息</span>
+				Our <span>Team</span>
 			</h3>
 			<div id="main" class="team_gds"></div>
 					

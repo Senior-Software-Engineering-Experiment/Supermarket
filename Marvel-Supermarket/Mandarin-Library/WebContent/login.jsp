@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8">
 <link rel="icon" type="image/png" href="images/图标.png" />
-<title>Supermarket|Login</title>
+<title>Library|Login</title>
 
 <link rel="shortcut icon" href="favicon.ico">
 
@@ -28,9 +28,9 @@
 		<div class="row">
 			<div class="col-md-12 text-center">
 				<ul class="menu">
-					<li><a href="retrieve.jsp">返回</a></li>
-					<li><a href="index.jsp">主页</a></li>
-					<li class="active"><a href="login.jsp">登录</a></li>
+					<li><a href="retrieve.jsp">Retrieve</a></li>
+					<li><a href="index.jsp">Home</a></li>
+					<li class="active"><a href="login.jsp">Login</a></li>
 				</ul>
 			</div>
 		</div>
@@ -42,34 +42,34 @@
 				<form action="LoginServlet" method="post"
 					class="fh5co-form animate-box" data-animate-effect="fadeInRight"
 					onsubmit="return check()">
-					<h2>登录</h2>
+					<h2>Login</h2>
 
 					<c:choose>
 						<c:when test="${!allTrue}">
 							<div class="form-group">
-								<label for="username" class="sr-only">用户名</label> <input
+								<label for="username" class="sr-only">Name</label> <input
 									type="text" class="form-control" id="username" name="username"
 									required
 									oninvalid="setCustomValidity('Please fill in this field!')"
-									oninput="setCustomValidity('')" placeholder="输入用户名" >
+									oninput="setCustomValidity('')" placeholder="UserName" >
 							</div>
 							<div class="form-group">
-								<label for="password" class="sr-only">密码</label> <input
+								<label for="password" class="sr-only">Password</label> <input
 									type="password" class="form-control" id="password" required
 									oninvalid="setCustomValidity('Please fill in this field!')"
 									oninput="setCustomValidity('')" name="password"
-									placeholder="输入密码" autocomplete="off">
+									placeholder="Password" autocomplete="off">
 							</div>
 						</c:when>
 						<c:when test="${rNoError}">
 							<div class="form-group">
-								<label for="username" class="sr-only">姓名</label> <input
+								<label for="username" class="sr-only">Name</label> <input
 									type="text" class="form-control red " id="username" name="username"
 									required oninvalid="setCustomValidity('Please fill in this field!')"
-									oninput="setCustomValidity('')" placeholder="用户名不正确">
+									oninput="setCustomValidity('')" placeholder="Incorrect UserName">
 							</div>
 							<div class="form-group">
-								<label for="password" class="sr-only">密码</label> <input
+								<label for="password" class="sr-only">Password</label> <input
 									type="password" class="form-control" id="password"
 									required="required" name="password" placeholder="Password" required
 									oninvalid="setCustomValidity('Please fill in this field!')"
@@ -78,35 +78,35 @@
 						</c:when>
 						<c:when test="${rPassError}">
 							<div class="form-group">
-								<label for="username" class="sr-only">姓名</label> <input
+								<label for="username" class="sr-only">Name</label> <input
 									type="text" class="form-control" id="username" name="username"
 									required oninvalid="setCustomValidity('Please fill in this field!')"
 									oninput="setCustomValidity('')" placeholder="Input UserName">
 							</div>
 							<div class="form-group">
-								<label for="password" class="sr-only">密码</label> <input
+								<label for="password" class="sr-only">Password</label> <input
 									type="password" class="form-control red" id="password" required
 									oninvalid="setCustomValidity('Please fill in this field!')"
 									oninput="setCustomValidity('')" name="password"
-									placeholder="密码不正确" autocomplete="off">
+									placeholder="Incorrect password" autocomplete="off">
 							</div>
 						</c:when>
 					</c:choose>
 					<div class="form-group">
 						<label for="remember"> <input type="checkbox"
-							id="remember">保存密码
+							id="remember">Save the password
 						</label>
 					</div>
 					<div class="form-group">
 						<p>
-							新用户？ <span>联系经理注册</span>
+							New user？ <span>Looking for administrator</span>
 						</p>
 						<p>
-							<a href="#"><span>忘记密码?</span></a>
+							<a href="#"><span>Forget the password?</span></a>
 						</p>
 					</div>
 					<div class="form-group">
-						<input id="submit" type="submit" value="登录"
+						<input id="submit" type="submit" value="Login"
 							class="btn btn-primary" onclick="setMyText()">
 					</div>
 				</form>
@@ -117,7 +117,7 @@
 		<div class="row" style="padding-top: 60px; clear: both;">
 			<div class="col-md-12 text-center">
 				<p>
-					<small>&copy; 技术支持 <a href="#" target="_blank">Marvel Supermarket team</a>
+					<small>&copy; Technical support <a href="#" target="_blank">Library support team</a>
 					</small>
 				</p>
 			</div>

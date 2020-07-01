@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>商品管理</title>
+<title>Manage books</title>
 </head>
 <body>
 	<!-- 书籍管理模块 -->
@@ -18,34 +18,34 @@
 		<div class="check-div form-inline">
 			<div class="col-xs-3">
 				<button class="btn btn-blue btn-xs" data-toggle="modal"
-					data-target="#addBook">添加商品信息</button>
+					data-target="#addBook">ADD WITHOUT ISBN</button>
 
-<!-- 				<button class="btn btn-yellow btn-xs" data-toggle="modal" -->
-<!-- 					data-target="#ISBN">ADD WITH ISBN</button> -->
+				<button class="btn btn-yellow btn-xs" data-toggle="modal"
+					data-target="#ISBN">ADD WITH ISBN</button>
 
 			</div>
 
 			<form>
 				<div class="col-lg-2" style="text-align: right;">
-					<label for="paixu">选择:&nbsp;</label> <select
+					<label for="paixu">Option:&nbsp;</label> <select
 						class=" form-control" name="bookSortSelect" id="bookSortSelect">
-						<option value="title" selected="selected">名称</option>
-						<option value="author">产商</option>
-						<option value="category">类别</option>
-						<option value="ISBN">商品码</option>
+						<option value="title" selected="selected">title</option>
+						<option value="author">author</option>
+						<option value="category">category</option>
+						<option value="ISBN">ISBN</option>
 					</select>
 				</div>
 				<div class="col-xs-3">
 					<input type="text" class="form-control input-sm"
-						placeholder="请输入..." name="searchContent" id="searchContent">
+						placeholder="Search" name="searchContent" id="searchContent">
 					<button type="button" class="btn btn-white btn-xs "
-						onclick="searchBook()">提交</button>
+						onclick="searchBook()">Submit</button>
 				</div>
 				<div class="col-xs-3">
 					<a class="linkCcc" href="#DeleteRecord" aria-controls="char"
 						role="tab" data-toggle="tab">
 						<button class="btn btn-yellow btn-xs" data-toggle="modal"
-							onclick="deletesearch()">删除记录</button>
+							onclick="deletesearch()">Delete Record</button>
 					</a>
 				</div>
 
@@ -56,13 +56,13 @@
 		<div class="data-div">
 			<div class="row tableHeader">
 				<!--调整col-lg- 这里的数字可以实现宽度的变化-->
-				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">商品号</div>
-				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">名称</div>
-				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">产商</div>
-				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">商品码</div>
-				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">类别</div>
-				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">位置</div>
-				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">操作</div>
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">BookNo</div>
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Title</div>
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Author</div>
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">ISBN</div>
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Category</div>
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Location</div>
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">Operation</div>
 			</div>
 			<div id="displayBookDiv" name="disPlayBookDiv"></div>
 		</div>
@@ -71,7 +71,7 @@
 			<ul class="pagination">
 				<li><select id="bookPageSelect" name="bookPageSelect"
 					onchange="displayBook(this.options[this.options.selectedIndex].value)">
-				</select> 页</li>
+				</select> Page</li>
 				<li class="gray" id="bookTotalPageLi" name="bookTotalPageLi"></li>
 				<li><i class="glyphicon glyphicon-menu-left" id="bookPageDown"
 					name="bookPageDown" onclick=bookPageDown()> </i></li>
@@ -90,14 +90,14 @@
 							aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
-						<h4 class="modal-title" id="gridSystemModalLabel">添加商品信息</h4>
+						<h4 class="modal-title" id="gridSystemModalLabel">Add Book</h4>
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid">
 							<form class="form-horizontal" name="tijiao" method="post"
 								action="AddBookServlet">
 								<div class="form-group ">
-									<label for="bName" class="col-xs-3 control-label">名称：</label>
+									<label for="bName" class="col-xs-3 control-label">Title：</label>
 									<div class="col-xs-8 ">
 										<input type="text" class="form-control input-sm duiqi"
 											name="bName" id="bName" placeholder=""
@@ -106,7 +106,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="text" class="col-xs-3 control-label">品牌：</label>
+									<label for="text" class="col-xs-3 control-label">Author：</label>
 									<div class="col-xs-8 ">
 										<input type="text" class="form-control input-sm duiqi"
 											name="bAuthor" id="bAuthor" placeholder=""
@@ -115,7 +115,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="sOrd" class="col-xs-3 control-label">原产地：</label>
+									<label for="sOrd" class="col-xs-3 control-label">Language：</label>
 									<div class="col-xs-8">
 										<input type="text" class="form-control input-sm duiqi"
 											name="bLanguage" id="bLanguage" placeholder=""
@@ -124,7 +124,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="sOrd" class="col-xs-3 control-label">价格：</label>
+									<label for="sOrd" class="col-xs-3 control-label">Price：</label>
 									<div class="col-xs-8">
 										<input type="text" class="form-control input-sm duiqi"
 											name="bPrice" id="bPrice" placeholder=""
@@ -133,7 +133,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="sOrd" class="col-xs-3 control-label">生产日期：</label>
+									<label for="sOrd" class="col-xs-3 control-label">Date：</label>
 									<div class="col-xs-8">
 										<input type="text" class="form-control input-sm duiqi"
 											name="bTime" id="bTime" placeholder=""
@@ -142,7 +142,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="sOrd" class="col-xs-3 control-label">生产商：</label>
+									<label for="sOrd" class="col-xs-3 control-label">Publisher：</label>
 									<div class="col-xs-8">
 										<input type="text" class="form-control input-sm duiqi"
 											name="bPublish" id="bPublish" placeholder=""
@@ -151,7 +151,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="sOrd" class="col-xs-3 control-label">介绍：</label>
+									<label for="sOrd" class="col-xs-3 control-label">Brief：</label>
 									<div class="col-xs-8">
 										<textarea class="form-control input-sm duiqi"
 											style="height: 170px" name="bBrief" id="bBrief"
@@ -162,7 +162,7 @@
 								</div>
 
 								<div class="form-group">
-									<label for="sOrd" class="col-xs-3 control-label">类别：</label>
+									<label for="sOrd" class="col-xs-3 control-label">Category：</label>
 									<div class="col-xs-8">
 										<select id="bCategory" name="bCategory"
 											class="form-control input-sm duiqi">
@@ -172,7 +172,7 @@
 								</div>
 
 								<div class="form-group">
-									<label for="sOrd" class="col-xs-3 control-label">位置：</label>
+									<label for="sOrd" class="col-xs-3 control-label">Location：</label>
 									<div class="col-xs-6">
 										<select id="bLocation" name="bLocation"
 											class="form-control input-sm duiqi">
@@ -180,7 +180,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="sOrd" class="col-xs-3 control-label">数量</label>
+									<label for="sOrd" class="col-xs-3 control-label">CopyNumber</label>
 									<div class="col-xs-8">
 										<input type="text" class="form-control input-sm duiqi"
 											name="bNumber" id="bNumber" value="1" placeholder=""
@@ -191,7 +191,7 @@
 								<div class="modal-footer">
 									<button type="button" class="btn btn-xs btn-xs btn-white"
 										data-dismiss="modal">Cancel</button>
-									<button type="submit" class="btn btn-xs btn-xs btn-green">保存</button>
+									<button type="submit" class="btn btn-xs btn-xs btn-green">Save</button>
 									<!-- 点击保存后数据要保存到数据库中，待实现-->
 								</div>
 							</form>
@@ -215,14 +215,14 @@
 							aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
-						<h4 class="modal-title" id="gridSystemModalLabel">添加商品</h4>
+						<h4 class="modal-title" id="gridSystemModalLabel">Add Book</h4>
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid">
 							<form class="form-horizontal" name="tijiao" method="post"
 								action="InputISBNServlet">
 								<div class="form-group ">
-									<label for="bName" class="col-xs-3 control-label">商品码:</label>
+									<label for="bName" class="col-xs-3 control-label">ISBN:</label>
 									<div class="col-xs-5 ">
 										<input type="text" class="form-control input-sm duiqi"
 											name="bISBN" id="bISBN" placeholder=""
@@ -235,7 +235,7 @@
 								<div class="modal-footer">
 									<button type="button" class="btn btn-xs btn-xs btn-white"
 										data-dismiss="modal">Cancel</button>
-									<button type="submit" class="btn btn-xs btn-xs btn-green">保存</button>
+									<button type="submit" class="btn btn-xs btn-xs btn-green">Save</button>
 									<!-- 点击保存后数据要保存到数据库中，待实现-->
 								</div>
 							</form>
@@ -260,14 +260,15 @@
 							aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
-						<h4 class="modal-title" id="gridSystemModalLabel">修改商品信息</h4>
+						<h4 class="modal-title" id="gridSystemModalLabel">Edit
+							Information</h4>
 					</div>
 					<div class="modal-body">
 						<div class="container-fluid">
 							<form class="form-horizontal" id="saveBookInfoForm"
 								name="saveBookInfoForm" action="ChangeBookInfoServlet">
 								<div class="form-group ">
-									<label for="sName" class="col-xs-3 control-label">名称：</label>
+									<label for="sName" class="col-xs-3 control-label">Title：</label>
 									<div class="col-xs-8 ">
 										<input type="hidden" id="thisBookNo" name="thisBookNo"
 											value=""> <input type="text"
@@ -279,7 +280,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="sLink" class="col-xs-3 control-label">品牌：</label>
+									<label for="sLink" class="col-xs-3 control-label">Author：</label>
 									<div class="col-xs-8 ">
 										<input type="" class="form-control input-sm duiqi"
 											id="thisBookAuthor" placeholder="" value=""
@@ -290,7 +291,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="sOrd" class="col-xs-3 control-label">原产地：</label>
+									<label for="sOrd" class="col-xs-3 control-label">Language：</label>
 									<div class="col-xs-8">
 										<input type="" class="form-control input-sm duiqi"
 											id="thisBookLanguage" name="thisBookLanguage" placeholder=""
@@ -301,7 +302,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="sOrd" class="col-xs-3 control-label">价格：</label>
+									<label for="sOrd" class="col-xs-3 control-label">Price：</label>
 									<div class="col-xs-8">
 										<input type="" class="form-control input-sm duiqi"
 											id="thisBookPrice" name="thisBookPrice" placeholder=""
@@ -312,7 +313,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="sOrd" class="col-xs-3 control-label">生产日期：</label>
+									<label for="sOrd" class="col-xs-3 control-label">Date：</label>
 									<div class="col-xs-8">
 										<input type="" class="form-control input-sm duiqi"
 											id="thisBookDate" name="thisBookDate" placeholder="" value=""
@@ -322,7 +323,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="sOrd" class="col-xs-3 control-label">生产商：</label>
+									<label for="sOrd" class="col-xs-3 control-label">Publisher：</label>
 									<div class="col-xs-8">
 										<input type="" class="form-control input-sm duiqi"
 											id="thisBookPublisher" name="thisBookPublisher"
@@ -333,7 +334,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="sOrd" class="col-xs-3 control-label">介绍：</label>
+									<label for="sOrd" class="col-xs-3 control-label">Brief：</label>
 									<div class="col-xs-8">
 										<input type="" class="form-control input-sm duiqi"
 											id="thisBookBrief" name="thisBookBrief" placeholder=""
@@ -344,7 +345,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="sOrd" class="col-xs-3 control-label">类别：</label>
+									<label for="sOrd" class="col-xs-3 control-label">Category：</label>
 									<div class="col-xs-8">
 										<select id="displayCtgInBookSelect"
 											name="displayCtgInBookSelect"
@@ -355,7 +356,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<label for="sOrd" class="col-xs-3 control-label">位置：</label>
+									<label for="sOrd" class="col-xs-3 control-label">Location：</label>
 									<div class="col-xs-6">
 										<select id="thisBookLocationSelect"
 											name="thisBookLocationSelect"
@@ -373,7 +374,7 @@
 						<button type="button" class="btn btn-xs btn-white"
 							data-dismiss="modal">Cancel</button>
 						<button type="button" class="btn btn-xs btn-green"
-							onclick="saveBookInfo()" data-dismiss="modal">保存</button>
+							onclick="saveBookInfo()" data-dismiss="modal">Save</button>
 						<!-- 点击保存后数据要保存到数据库中，待实现，与添加数据一样-->
 					</div>
 				</div>
@@ -392,10 +393,11 @@
 							aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
-						<h4 class="modal-title" id="gridSystemModalLabel">删除商品</h4>
+						<h4 class="modal-title" id="gridSystemModalLabel">Prompt</h4>
 					</div>
 					<div class="modal-body">
-						<div class="container-fluid">确定要删除此商品吗?</div>
+						<div class="container-fluid">Are you sure you want to delete
+							this book?</div>
 						<form id="deleteThisBookForm" name="deleteThisBookForm"
 							action="DeleteBookServlet">
 							<input id="deleteBookNo" name="deleteBookNo" type="hidden"
@@ -404,9 +406,9 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-xs btn-white"
-							data-dismiss="modal">取消</button>
+							data-dismiss="modal">Cancel</button>
 						<button type="button" class="btn btn-xs btn-danger"
-							onclick="deleteThisBook()" data-dismiss="modal">删除</button>
+							onclick="deleteThisBook()" data-dismiss="modal">Delete</button>
 						<!--确定删除后结果存入数据库-->
 					</div>
 				</div>
@@ -545,12 +547,12 @@
 							+ 'data-target="#changeBook"'
 							+ 'onclick="turnToThisBook('
 							+ bookNo
-							+ ')">编辑</button>'
+							+ ')">Modify</button>'
 							+ '<button class="btn btn-danger btn-xs" data-toggle="modal"'
 							+ 'data-target="#deleteBook"'
 							+ 'onclick="toDeleteThisBook('
 							+ bookNo
-							+ ')">删除</button>'
+							+ ')">Delete</button>'
 							+ '</div></div></div>';
 						$("#displayBookDiv").append(div);
 					}
