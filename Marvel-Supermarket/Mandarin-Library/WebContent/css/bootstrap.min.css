@@ -1943,7 +1943,7 @@ pre code {
 
 
 .col-xs-222 {
-	width: 16.66666667%;
+	width: 16.6%;
 	float: left;
 	position: relative;
 	min-height: 1px;
@@ -1951,6 +1951,22 @@ pre code {
 	padding-left: 63px
 }
 
+.col-xs-233 {
+	width: 10%;
+	float: left;
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 63px
+}
+.col-xs-234 {
+	width: 22.5%;
+	float: left;
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 63px
+}
 
 .col-xs-223 {
 	width: 16.66666667%;
