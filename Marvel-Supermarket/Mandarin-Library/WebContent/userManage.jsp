@@ -5,32 +5,32 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>顾客管理</title>
 </head>
 <body>
 	<div role="tabpanel" class="tab-pane" id="user">
 		<div class="check-div form-inline">
 			<div class="col-xs-3" id="readerUpperButton" name="readerUpperButton">
 				<button class="btn btn-yellow btn-xs" data-toggle="modal"
-					data-target="#addUser">添加用户</button>
+					data-target="#addUser">添加顾客</button>
 			</div>
 			<div class="col-xs-4">
 				<input type="text" class="form-control input-sm"
-					placeholder="输入文字查找" name="searchReaderContent"
+					placeholder="请输入..." name="searchReaderContent"
 					id="searchReaderContent">
 				<button type="button" class="btn btn-white btn-xs "
-					onclick="searchReader()">查找</button>
+					onclick="searchReader()">搜索</button>
 			</div>
 		</div>
 		<div class="data-div">
 			<div class="row tableHeader" name="readerDisplayLabelForm"
 				id="readerDisplayLabelForm">
-				<div class="col-xs-2 ">账号</div>
+				<div class="col-xs-2 ">用户名</div>
 				<div class="col-xs-2 ">姓名</div>
 				<div class="col-xs-2">密码</div>
 				<div class="col-xs-2">邮箱</div>
-				<div class="col-xs-2">消费总金额</div>
-				<div class="col-xs-2" style="padding-left: 500px">操作</div>
+				<div class="col-xs-2">余额</div>
+				<div class="col-xs-2" >操作</div>
 			</div>
 
 			<div class="tablebody" name="displayReaderDiv" id="displayReaderDiv">
@@ -42,7 +42,7 @@
 			<ul class="pagination">
 				<li><select id="readerPageSelect" name="readerPageSelect"
 					onchange="displayReader(this.options[this.options.selectedIndex].value)">
-				</select> 页面</li>
+				</select> 页</li>
 				<li class="gray" id="readerTotalPageLi" name="readerTotalPageLi"></li>
 				<li><i class="glyphicon glyphicon-menu-left"
 					id="readerPageDown" name="readerPageDown" onclick=readerPageDown()>
@@ -70,7 +70,7 @@
 							<div class="container-fluid">
 
 								<div class="form-group ">
-									<label for="sName" class="col-xs-3 control-label">账户：</label>
+									<label for="sName" class="col-xs-3 control-label">用户名：</label>
 									<div class="col-xs-8 ">
 										<input type="text" class="form-control input-sm duiqi"
 											name="newReaderAcc" id="newReaderAcc" placeholder="">
@@ -195,10 +195,10 @@
 								aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
-							<h4 class="modal-title" id="gridSystemModalLabel">提醒</h4>
+							<h4 class="modal-title" id="gridSystemModalLabel">注意</h4>
 						</div>
 						<div class="modal-body">
-							<div class="container-fluid">你确定删除顾客吗？</div>
+							<div class="container-fluid">确定删除吗？</div>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-xs btn-white"
@@ -267,23 +267,23 @@
 		               					$("#readerUpperButton").empty();
 		               					var div3 = '<span onclick="displayReader(1)" aria-controls="book" role="tab" '
 		        								+ 'data-toggle="tab" style="cursor: pointer;"><span '
-		        								+ 'class="glyphicon glyphicon glyphicon-chevron-left"></span>Back</span>';
+		        								+ 'class="glyphicon glyphicon glyphicon-chevron-left"></span>返回</span>';
 		        						$("#readerUpperButton").append(div3);
-		               					var div2 = '<div class="col-xs-2 ">Book Number</div>'
-		               							+ '<div class="col-xs-2">Title</div>'
-		               							+ '<div class="col-xs-2">Author</div>'
-		               							+ '<div class="col-xs-2">Borrow Time</div>'
-		               							+ '<div class="col-xs-2">Fine</div>'
-		               							+ '<div class="col-xs-2">Returned?</div>'
-		               							+ '<div class="col-xs-2">Operation</div>';
+		               					var div2 = '<div class="col-xs-2 ">商品号</div>'
+		               							+ '<div class="col-xs-2">名称</div>'
+		               							+ '<div class="col-xs-2">品牌</div>'
+		               							+ '<div class="col-xs-3">消费时间</div>'
+		               							+ '<div class="col-xs-2">消费金额</div>'
+// 		               							+ '<div class="col-xs-2">Returned?</div>'
+		               							+ '<div class="col-xs-2">操作</div>';
 		               					$("#readerDisplayLabelForm").append(div2);
 		               					for ( var num in objs) {
 		               						var bookNo = objs[num].bookNo;
 		               						var bookTitle = objs[num].bookTitle;
 		               						var bookAuthor = objs[num].bookAuthor;
 		               						var borrowTime = objs[num].borrowTime;
-		               						var isReturned = objs[num].isReturned;
-		               						var fine = objs[num].fine;
+// 		               						var isReturned = objs[num].isReturned;
+		               						var fine = objs[num].bookprice;
 		               						if(fine != 0)
 		               						var div = '<div class="row">'
 		    										+ '<div class="col-xs-2 ">'
@@ -295,18 +295,18 @@
 		    										+ '<div class="col-xs-2">'
 		    										+ bookAuthor
 		    										+ '</div>'
-		    										+ '<div class="col-xs-2">'
+		    										+ '<div class="col-xs-3">'
 		    										+ borrowTime
 		    										+ '</div>'
-		    										+ '<div class="col-xs-1">'
+		    										+ '<div class="col-xs-2">'
 		    										+ fine
 		    										+ '</div>'
-		    										+ '<div class="col-xs-1">'
-		    										+ isReturned
-		    										+ '</div>'
+// 		    										+ '<div class="col-xs-1">'
+// 		    										+ isReturned
+// 		    										+ '</div>'
 		    										+ '<div class="col-xs-2">'
-		    										+ '<button class="btn btn-success btn-xs" data-toggle="modal" '
-		    										+ 'data-target="#penalty">Fine</button>'
+// 		    										+ '<button class="btn btn-success btn-xs" data-toggle="modal" '
+// 		    										+ 'data-target="#penalty">Fine</button>'
 		    										+ '<button class="btn btn-danger btn-xs" data-toggle="modal" '
 		    										+ 'onclick="deleteBorrow('
 		    										+ bookNo
@@ -325,15 +325,15 @@
 			    										+ '<div class="col-xs-2">'
 			    										+ bookAuthor
 			    										+ '</div>'
-			    										+ '<div class="col-xs-2">'
+			    										+ '<div class="col-xs-3">'
 			    										+ borrowTime
 			    										+ '</div>'
-			    										+ '<div class="col-xs-1">'
+			    										+ '<div class="col-xs-2">'
 			    										+ fine
 			    										+ '</div>'
-			    										+ '<div class="col-xs-1">'
-			    										+ isReturned
-			    										+ '</div>'
+// 			    										+ '<div class="col-xs-1">'
+// 			    										+ isReturned
+// 			    										+ '</div>'
 			    										+ '<div class="col-xs-2">'
 			    										+ '<button class="btn btn-danger btn-xs" data-toggle="modal" '
 			    										+ 'onclick="deleteBorrow('
@@ -370,12 +370,12 @@
 					var div3 = '<button class="btn btn-yellow btn-xs" data-toggle="modal" '
 							+ 'data-target="#addUser">添加顾客</button>';
 					$("#readerUpperButton").append(div3);
-   					var div2 = '<div class="col-xs-2 ">账户</div>'
+   					var div2 = '<div class="col-xs-2 ">用户名</div>'
    							+ '<div class="col-xs-2">姓名</div>'
    							+ '<div class="col-xs-2">密码</div>'
    							+ '<div class="col-xs-2">邮箱</div>'
-   							+ '<div class="col-xs-2" style="padding-left:100px">金额</div>'
-   							+ '<div class="col-xs-2" style="padding-left:200px">操作</div>';
+   							+ '<div class="col-xs-3" style="padding-left:120px">消费金额</div>'
+   							+ '<div class="col-xs-2" style="padding-left:90px">操作</div>';
    					$("#readerDisplayLabelForm").append(div2);
    						if(pageNum == 1){
 							$("#readerPageSelect").empty();
@@ -412,7 +412,7 @@
 									+ '<div class="col-xs-2" style="padding-left:119px">'
 									+ readerFine
 									+ '</div>'
-									+ '<div class="col-xs-4" style="padding-left:150px">'
+									+ '<div class="col-xs-4" style="padding-left:266px">'
 									+ '<button class="btn btn-success btn-xs" data-toggle="modal"'
 									+ 'data-target="#reviseUser" onclick="toModifyThisReader('
 									+ readerNo
@@ -423,7 +423,7 @@
 									+ ')">删除</button>'
 									+ '<button class="btn btn-xs" data-toggle="modal" onclick="displayBorrow('
 									+ readerNo
-									+')" style="color: #f5f5f5; background-color: #f1c40f;">恢复</button>'
+									+')" style="color: #f5f5f5; background-color: #f1c40f;">查看消费记录</button>'
 									+ '</div>'
 									+ '</div>';
 							$("#displayReaderDiv").append(div);
@@ -475,16 +475,16 @@
 							+ '<button class="btn btn-success btn-xs" data-toggle="modal"'
 							+ 'data-target="#reviseUser" onclick="xg('
 							+ readerNo
-							+ ')">编辑</button>'
+							+ ')">Edit</button>'
 							+ '<button class="btn btn-danger btn-xs" data-toggle="modal"'
 							+ 'data-target="#deleteUser" onclick="sc('
 							+ readerNo
-							+ ')">删除</button>'
+							+ ')">Delete</button>'
 							+ '<a class="linkCcc"  aria-controls="char"'
 							+ 'role="tab" data-toggle="tab"><button'
 							+ 'class="btn btn-danger btn-xs" data-toggle="modal" onclick="displayBorrow('
 							+ readerNo
-							+')" >恢复</button></a>'
+							+')" >Record</button></a>'
 							+ '</div>';
 						$("#disReaderDiv").append(div);
 					 }
@@ -509,11 +509,11 @@
 		               			url : "DeleteReaderServlet",
 		               			traditional : true,
 		               			success : function(data) {
-		               				alert("Delete reader successfully!");
+		               				alert("删除成功!");
 		               				displayReader(1);
 		               			},
 		               			error : function() {
-		               				alert("connect failed!");
+		               				alert("连接失败!");
 		               			}
 		               	});
 		    }
@@ -536,11 +536,11 @@
 		               			url : "ChangeReaderServlet",
 		               			traditional : true,
 		               			success : function(data) {
-		               				alert("Modify reader successfully!");
+		               				alert("修改成功!");
 		               				displayReader(1);
 		               			},
 		               			error : function() {
-		               				alert("connect failed!");
+		               				alert("连接失败!");
 		               			}
 		               	});
 		    }
@@ -561,13 +561,13 @@
 		               			url : "ReaderManageServlet",
 		               			traditional : true,
 		               			success : function(data) {
-		               				alert("Create reader successfully!");
+		               				alert("注册顾客账户成功!");
 		               				displayReader(1);
 		               			},
 		               			error : function() {
-		               				alert("connect failed!");
+		               				alert("连接失败!");
 		               			}
 		               	});
-		    }
+			}
 	</script>
 </html>
