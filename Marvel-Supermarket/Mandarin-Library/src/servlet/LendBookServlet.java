@@ -44,6 +44,7 @@ public class LendBookServlet extends HttpServlet {
 
 		Fine fine = fineDAO.get();
 		int day = fine.getReturnPeriod();
+		
 
 		Timestamp sqlborrowtime = new Timestamp(new Date().getTime());
 		System.out.println(sqlborrowtime);
@@ -54,16 +55,17 @@ public class LendBookServlet extends HttpServlet {
 		System.out.println(sqlshouldreturntime);
 		if (sbookno == null || readerno == null) {
 			response.getWriter().write(
-					"<script>alert('Bookno and reader cannot be empty!');window.location.href='library.jsp'</script>");
+					"<script>alert('商品码和顾客不得为空!');window.location.href='library.jsp'</script>");
 		} else {
 			int bookno = Integer.parseInt(sbookno);
 			Book book1 = bookDAO.get(bookno);
 			int lendnum = borrowDAO.getlendnum(readerno);
+			String price=bookDAO.get(bookno).getPrice();
 			if (lendnum >= 3) {
 				response.getWriter().write(
 						"<script>alert('The lended books are more than three!');window.location.href='library.jsp'</script>");
 			} else {
-				Borrow borrow = new Borrow(bookno, readerno, sqlborrowtime, false, sqlshouldreturntime, null);
+				Borrow borrow = new Borrow(bookno, readerno, sqlborrowtime, false, sqlshouldreturntime, null,price);
 				borrowDAO.add(borrow);
 				response.sendRedirect("library.jsp");
 			}

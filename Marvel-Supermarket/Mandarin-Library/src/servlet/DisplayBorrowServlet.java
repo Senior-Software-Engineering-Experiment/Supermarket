@@ -67,7 +67,7 @@ public class DisplayBorrowServlet extends HttpServlet {
         	DateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         	borrowTime = sdf.format(borrowRec.getBorrowTime());
         	jsonObject.put("borrowTime", borrowTime);
-        	jsonObject.put("fine", borrowRec.getFine());
+        	jsonObject.put("bookprice", borrowRec.getPrice());
         	jsonObject.put("isReturned", borrowRec.getIsReturned());
         	jsonObject.put("bookNo", borrowRec.getBookNo());
         	jsonArray.add(jsonObject);
