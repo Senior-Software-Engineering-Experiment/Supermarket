@@ -77,7 +77,7 @@ public class BorrowDAO {
 
 			Connection c = DBHelper.getInstance().getConnection();
 
-			String sql = "insert into borrow values(?,?,?,?,?,?)";
+			String sql = "insert into borrow values(?,?,?,?,?,?,?)";
 			PreparedStatement ps = c.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
 
 			ps.setInt(1, borrow.getBookNo());
@@ -86,6 +86,7 @@ public class BorrowDAO {
 			ps.setBoolean(4, borrow.isReturned());
 			ps.setTimestamp(5, borrow.getShouldReturnTime());
 			ps.setTimestamp(6, borrow.getReturnTime());
+			ps.setString(7, borrow.getPrice());
 
 			ps.execute();
 			ResultSet rs = ps.getGeneratedKeys();
@@ -122,11 +123,13 @@ public class BorrowDAO {
 				String sisreturned = rs.getString("isreturned");
 				String sshouldreturntime = rs.getString("shouldreturntime");
 				String sretuentime = rs.getString("returntime");
+				String sprice=rs.getString("price");
 				int bookno = Integer.parseInt(sbookno);
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 				Timestamp borrowtime = Timestamp.valueOf(sborrowtime);
 				Timestamp shouldreturntime = Timestamp.valueOf(sshouldreturntime);
 				Boolean isreturned = Boolean.parseBoolean(sisreturned);
+				borrow.setPrice(sprice);
 				borrow.setBookNo(bookno);
 				borrow.setReaderNo(readerno);
 				borrow.setBorrowTime(borrowtime);
@@ -175,6 +178,7 @@ public class BorrowDAO {
 					int bookNo = rs.getInt("bookNo");
 					String title = rs.getString("title");
 					String author = rs.getString("author");
+					String price = rs.getString("price");
 					String readerNo = readerno;
 					
 					Timestamp borrowTime = rs.getTimestamp("borrowTime");
@@ -184,7 +188,7 @@ public class BorrowDAO {
 					Timestamp ingShouldReturnTime = rs.getTimestamp("shouldReturnTime");
 					Timestamp ingReturnTime = rs.getTimestamp("returnTime");
 					
-					BorrowRecord borrow = new BorrowRecord(bookNo, title, author, readerNo, borrowTime,sIsReturned,ingShouldReturnTime, ingReturnTime);
+					BorrowRecord borrow = new BorrowRecord(bookNo, title, author, readerNo, borrowTime,sIsReturned,ingShouldReturnTime, ingReturnTime,price);
 					borrows.add(borrow);
 				}
 				DBHelper.closeConnection(c, ps, rs);
@@ -255,12 +259,13 @@ public class BorrowDAO {
 					String ingTitle = rs.getString("title");
 					String ingAuthor = rs.getString("author");
 					String ingReaderNo = readerno;
+					String price =rs.getString("price");
 					Timestamp ingBorrowTime = rs.getTimestamp("borrowTime");
 					boolean isReturned = false;
 					Timestamp ingShouldReturnTime = rs.getTimestamp("shouldReturnTime");
 					Timestamp ingReturnTime = rs.getTimestamp("returnTime");
 					Borrow ingBook = new Borrow(ingBookNo, ingTitle, ingAuthor, ingReaderNo, ingBorrowTime, isReturned,
-							ingShouldReturnTime, ingReturnTime);
+							ingShouldReturnTime, ingReturnTime,price);
 					ingBooks.add(ingBook);
 				}
 				DBHelper.closeConnection(c, ps, rs);
@@ -292,8 +297,9 @@ public class BorrowDAO {
 					boolean isReturned = false;
 					Timestamp ingShouldReturnTime = rs.getTimestamp("shouldReturnTime");
 					Timestamp ingReturnTime = rs.getTimestamp("returnTime");
+					String price =rs.getString("price");
 					Borrow finishBook = new Borrow(ingBookNo, ingTitle, ingAuthor, ingReaderNo, ingBorrowTime, isReturned,
-							ingShouldReturnTime, ingReturnTime);
+							ingShouldReturnTime, ingReturnTime,price);
 					finishBooks.add(finishBook);
 				}
 				DBHelper.closeConnection(c, ps, rs);
@@ -331,8 +337,9 @@ public class BorrowDAO {
 						boolean isReturned = false;
 						Timestamp ingShouldReturnTime = rs.getTimestamp("shouldReturnTime");
 						Timestamp ingReturnTime = rs.getTimestamp("returnTime");
+						String price =rs.getString("price");
 						Borrow overTimeBook = new Borrow(ingBookNo, ingTitle, ingAuthor, ingReaderNo, ingBorrowTime,
-								isReturned, ingShouldReturnTime, ingReturnTime, fine);
+								isReturned, ingShouldReturnTime, ingReturnTime, price);
 						overTimeBooks.add(overTimeBook);
 
 					}

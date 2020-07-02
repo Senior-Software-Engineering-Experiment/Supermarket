@@ -344,6 +344,7 @@ public class BookDAO {
 				String title = rs.getString("title");
 				String author = rs.getString("author");
 				String ISBN = rs.getString("ISBN");
+				String price = rs.getString("price");
 				String category = rs.getString("category");
 				String time = rs.getString("time");
 				String location = rs.getString("location");
@@ -353,6 +354,7 @@ public class BookDAO {
 				book.setTitle(title);
 				book.setAuthor(author);
 				book.setISBN(ISBN);
+				book.setPrice(price);
 				book.setCategory(category);
 				book.setTime(time);
 				book.setLocation(location);
@@ -402,6 +404,7 @@ public class BookDAO {
 				String title = rs.getString("title");
 				String author = rs.getString("author");
 				String ISBN = rs.getString("ISBN");
+				String price = rs.getString("price");
 				String category = rs.getString("category");
 				String time = rs.getString("time");
 				String location = rs.getString("location");
@@ -412,6 +415,7 @@ public class BookDAO {
 				book.setTitle(title);
 				book.setAuthor(author);
 				book.setISBN(ISBN);
+				book.setPrice(price);
 				book.setCategory(category);
 				book.setTime(time);
 				book.setLocation(location);
@@ -465,6 +469,7 @@ public class BookDAO {
 				String title = rs.getString("title");
 				String author = rs.getString("author");
 				String ISBN = rs.getString("ISBN");
+				String price = rs.getString("price");
 				String category = rs.getString("category");
 				String time = rs.getString("time");
 				String location = rs.getString("location");
@@ -475,6 +480,7 @@ public class BookDAO {
 				book.setTitle(title);
 				book.setAuthor(author);
 				book.setISBN(ISBN);
+				book.setPrice(price);
 				book.setCategory(category);
 				book.setTime(time);
 				book.setLocation(location);
@@ -518,6 +524,7 @@ public class BookDAO {
 				String title = rs.getString("title");
 				String author = rs.getString("author");
 				String ISBN = rs.getString("ISBN");
+				String price = rs.getString("price");
 				String category = rs.getString("category");
 				String time = rs.getString("time");
 				String location = rs.getString("location");
@@ -529,6 +536,7 @@ public class BookDAO {
 				book.setTitle(title);
 				book.setAuthor(author);
 				book.setISBN(ISBN);
+				book.setPrice(price);
 				book.setCategory(category);
 				book.setTime(time);
 				book.setLocation(location);
@@ -590,6 +598,7 @@ public class BookDAO {
 				String title = rs.getString("title");
 				String author = rs.getString("author");
 				String ISBN = rs.getString("ISBN");
+				String Price = rs.getString("Price");
 				String category = rs.getString("category");
 				String time = rs.getString("time");
 				String location = rs.getString("location");
@@ -601,6 +610,7 @@ public class BookDAO {
 				book.setTitle(title);
 				book.setAuthor(author);
 				book.setISBN(ISBN);
+				book.setPrice(Price);
 				book.setCategory(category);
 				book.setTime(time);
 				book.setLocation(location);
@@ -662,6 +672,7 @@ public class BookDAO {
 				String title = rs.getString("title");
 				String author = rs.getString("author");
 				String ISBN = rs.getString("ISBN");
+				String price = rs.getString("price");
 				String category = rs.getString("category");
 				String time = rs.getString("time");
 				String location = rs.getString("location");
@@ -671,6 +682,7 @@ public class BookDAO {
 				book.setTitle(title);
 				book.setAuthor(author);
 				book.setISBN(ISBN);
+				book.setPrice(price);
 				book.setCategory(category);
 				book.setTime(time);
 				book.setLocation(location);
