@@ -12,6 +12,7 @@ public class Borrow {
 	private boolean isReturned;
 	private Timestamp shouldReturnTime;
 	private Timestamp returnTime;
+	private String price;
 	private int fine;
 	
 	
@@ -27,8 +28,9 @@ public class Borrow {
 	public void setFine(int fine) {
 		this.fine = fine;
 	}
+	
 
-	public Borrow(int bookno,String readerno,Timestamp borrowtime,boolean isreturned,Timestamp shouldreturntime,Timestamp returntime) {
+	public Borrow(int bookno,String readerno,Timestamp borrowtime,boolean isreturned,Timestamp shouldreturntime,Timestamp returntime,String price) {
 		super();
 		this.bookNo    = bookno;
 		//this.title     = title;
@@ -38,10 +40,11 @@ public class Borrow {
 		this.isReturned= isreturned;
 		this.shouldReturnTime = shouldreturntime;
 		this.returnTime = returntime;
+		this.price = price;
 		this.fine=0;
    	}
 	
-	public Borrow(int bookno,String title,String author, String readerno,Timestamp borrowtime,boolean isreturned,Timestamp shouldreturntime,Timestamp returntime) {
+	public Borrow(int bookno,String title,String author, String readerno,Timestamp borrowtime,boolean isreturned,Timestamp shouldreturntime,Timestamp returntime,String price) {
 		super();
 		this.bookNo    = bookno;
 		this.title     = title;
@@ -51,6 +54,7 @@ public class Borrow {
 		this.isReturned= isreturned;
 		this.shouldReturnTime = shouldreturntime;
 		this.returnTime = returntime;
+		this.price = price;
 		this.fine=0;
    	}
     
@@ -129,6 +133,13 @@ public class Borrow {
 
 	public void setReturnTime(Timestamp returnTime) {
 		this.returnTime = returnTime;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
+	public String getPrice() {
+		return price;
 	}
 
 	

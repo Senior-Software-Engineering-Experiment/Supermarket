@@ -15,20 +15,19 @@ public class BorrowRecord {
 	private String isReturned;
 	private Timestamp shouldReturnTime;
 	private Timestamp returnTime;
-	private int fine;
+	private String price;
 	
 	
 	
     public BorrowRecord() {
 		
 	}
-    
-    public int getFine() {
-		return fine;
+	public void setPrice(String price) {
+		this.price = price;
 	}
 
-	public void setFine(int fine) {
-		this.fine = fine;
+	public String getPrice() {
+		return price;
 	}
 	
 	public BorrowRecord(int bookno,String title,String author, String readerno,Timestamp borrowtime,String isreturned,Timestamp shouldreturntime,Timestamp returntime) {
@@ -41,10 +40,10 @@ public class BorrowRecord {
 		this.isReturned= isreturned;
 		this.shouldReturnTime = shouldreturntime;
 		this.returnTime = returntime;
-		this.fine=0;
+
    	}
     
-    public BorrowRecord(int bookno,String title,String author,String readerno,Timestamp borrowtime,String isreturned,Timestamp shouldreturntime,Timestamp returntime,int fine) {
+    public BorrowRecord(int bookno,String title,String author,String readerno,Timestamp borrowtime,String isreturned,Timestamp shouldreturntime,Timestamp returntime,String price) {
 		super();
 		this.bookNo    = bookno;
 		this.title     = title;
@@ -54,7 +53,7 @@ public class BorrowRecord {
 		this.isReturned= isreturned;
 		this.shouldReturnTime = shouldreturntime;
 		this.returnTime = returntime;
-		this.fine=fine;
+		this.price=price;
    	}
 
 	public String getTitle() {
